@@ -7,9 +7,7 @@ body {
   color: #ffffff;
 }
 
-.css-12lgnrk-MuiPaper-root,
-.css-1gcqhuv-MuiPaper-root,
-.css-19sshex-MuiPaper-root {
+.paper-back {
   color: #ffffff !important;
   background-color: #32008180 !important;
   border-radius: 20px !important;
@@ -25,12 +23,12 @@ body {
   background: red;
 }
 
-.css-1wvnaxz-MuiTableCell-root.MuiTableCell-head {
+.disable-head {
   background-color: transparent !important;
   color: #fff;
 }
 
-.css-1nslmh4-MuiTableCell-root {
+.visible-head {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   background-color: #2e15e4 !important;
@@ -43,9 +41,6 @@ body {
 .last-header {
   border-radius: 0 650px 650px 0 !important;
 }
-.css-1bhpkcd-MuiTableCell-root {
-  border: none !important;
-}
-.css-132a6sb-MuiTableCell-root {
+.table-data-row {
   border: none !important;
 }

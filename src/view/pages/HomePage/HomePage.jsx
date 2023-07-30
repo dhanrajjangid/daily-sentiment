@@ -24,7 +24,7 @@ const Home = () => {
       <Box sx={{ flexGrow: 1, mb: 2 }}>
         <Grid container spacing={2}>
           <Grid item md={5}>
-            <Paper sx={{ p: 2, height: 450 }}>
+            <Paper className="paper-back" sx={{ p: 2, height: 450 }}>
               <Typography>Daily Sentiment Heat Map</Typography>
 
               <Grid item>
@@ -33,12 +33,12 @@ const Home = () => {
             </Paper>
           </Grid>
           <Grid item md={2}>
-            <Paper sx={{ p: 2, height: 450 }}>
+            <Paper className="paper-back" sx={{ p: 2, height: 450 }}>
               <SearchCard />
             </Paper>
           </Grid>
           <Grid item md={5}>
-            <Paper sx={{ p: 2, height: 450 }}>
+            <Paper className="paper-back" sx={{ p: 2, height: 450 }}>
               <Grid
                 item
                 sx={{
@@ -73,7 +73,7 @@ const Home = () => {
               </Grid>
             </Grid>
             <Grid item md={12}>
-              <Paper sx={{ p: 2, height: 300 }}>
+              <Paper className="paper-back" sx={{ p: 2, height: 300 }}>
                 <Grid>
                   <DailyComu />
                 </Grid>
@@ -84,7 +84,7 @@ const Home = () => {
 
           {/* third item */}
           <Grid item md={7}>
-            <Paper sx={{ p: 2, height: 375 }}>
+            <Paper className="paper-back" sx={{ p: 2, height: 375 }}>
               <TableComp />
             </Paper>
           </Grid>
