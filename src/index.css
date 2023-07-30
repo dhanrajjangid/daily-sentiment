@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100;500;600;700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #190040;
+  color: #ffffff;
+}
+
+.css-12lgnrk-MuiPaper-root,
+.css-1gcqhuv-MuiPaper-root,
+.css-19sshex-MuiPaper-root {
+  color: #ffffff !important;
+  background-color: #32008180 !important;
+  border-radius: 20px !important;
+}
+
+.outer_circle {
+  position: relative;
+  margin: 50px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  z-index: 2;
+  background: red;
+}
+
+.css-1wvnaxz-MuiTableCell-root.MuiTableCell-head {
+  background-color: transparent !important;
+  color: #fff;
+}
+
+.css-1nslmh4-MuiTableCell-root {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background-color: #2e15e4 !important;
+}
+
+.first-header {
+  border-radius: 650px 0 0 650px !important;
+}
+
+.last-header {
+  border-radius: 0 650px 650px 0 !important;
+}
+.css-1bhpkcd-MuiTableCell-root {
+  border: none !important;
+}
+.css-132a6sb-MuiTableCell-root {
+  border: none !important;
+}
