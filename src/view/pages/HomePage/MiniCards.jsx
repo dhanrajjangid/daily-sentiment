@@ -12,7 +12,7 @@ export default function MiniCards() {
       sx={{
         display: "flex",
         height: 70,
-        borderRadius: "10px",
+        borderRadius: "10px ",
         color: "white",
       }}
     >

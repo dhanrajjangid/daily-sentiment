@@ -22,25 +22,3 @@ body {
   z-index: 2;
   background: red;
 }
-
-.disable-head {
-  background-color: transparent !important;
-  color: #fff;
-}
-
-.visible-head {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  background-color: #2e15e4 !important;
-}
-
-.first-header {
-  border-radius: 650px 0 0 650px !important;
-}
-
-.last-header {
-  border-radius: 0 650px 650px 0 !important;
-}
-.table-data-row {
-  border: none !important;
-}
