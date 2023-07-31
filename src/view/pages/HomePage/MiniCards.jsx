@@ -59,7 +59,7 @@ export default function MiniCards() {
             sx={{
               backgroundColor: "green",
               height: "10px",
-              width: "10px",
+              // width: "10px",
               left: "50%",
             }}
           ></Box>

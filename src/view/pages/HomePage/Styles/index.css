@@ -1,3 +1,8 @@
+.sentiment-paper {
+  background-color: rgb(37, 0, 97, 0.3) !important;
+  border-radius: 20px !important;
+}
+
 table {
   border-collapse: separate;
   border-spacing: 0 15px;
@@ -40,6 +45,15 @@ td:last-child {
 }
 
 /* top table */
+.top-table {
+  overflow: "scroll";
+}
+
+.top-table::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
 .top-table table tr:first-child {
   vertical-align: bottom;
   height: 37px;
@@ -55,4 +69,22 @@ td:last-child {
   font-weight: 300;
   font-size: 0.9rem;
   padding: 0;
+}
+
+/* pie chart */
+#container1 {
+  height: 161px;
+  width: 161px;
+}
+
+#container1 svg .highcharts-background,
+#container1 svg .highcharts-credits,
+#container1 svg .highcharts-plot-background,
+#container1 svg .highcharts-plot-border {
+  display: none;
+}
+
+#container1 svg .highcharts-title {
+  font-size: 16px;
+  fill: rgb(244, 245, 244) !important;
 }

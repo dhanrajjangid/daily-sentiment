@@ -10,12 +10,14 @@ const rows = [
   createData("Eclair", 262, 16.0, 24, 6.0),
   createData("Cupcake", 305, 3.7, 67, 4.3),
   createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
 ];
 
 export default function TopTable() {
   return (
-    <Box className="top-table">
-      <table style={{ maxHeight: "100%" }}>
+    <Box className="top-table" sx={{ height: "100%", overflow: "scroll" }}>
+      <table style={{ height: "100%", width: "100%" }}>
         <tr>
           <th>Stock Name</th>
           <th>Today Price</th>
