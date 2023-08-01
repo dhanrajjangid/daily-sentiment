@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import { styled, Typography } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
 
@@ -17,28 +17,28 @@ const heights = [
   ),
   createData(
     "#27D276",
-    160,
+    140,
     9.0,
     "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/625px-Apple_logo_black.svg.png",
     4.3
   ),
   createData(
     "#B70606",
-    160,
+    140,
     16.0,
     "https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png",
     6.0
   ),
   createData(
     "#B3BBB7",
-    105,
+    125,
     3.7,
     "https://www.freepnglogos.com/uploads/tesla-logo-png-27.png",
     4.3
   ),
   createData(
     "#B3BBB7",
-    105,
+    125,
     3.7,
     "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
     4.3
@@ -90,6 +90,7 @@ export default function FixedSpacing() {
                 sx={{
                   height: "100%",
                   display: "flex",
+                  flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
                 }}
@@ -98,19 +99,21 @@ export default function FixedSpacing() {
                   sx={{
                     backgroundColor: "white",
                     borderRadius: "50%",
-                    width: "80px",
-                    height: "80px",
+                    width: "60px",
+                    height: "60px",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
                 >
                   <img
-                    style={{ height: "40px", width: "40px" }}
+                    style={{ height: "30px", width: "30px" }}
                     src={item.image}
                     alt=""
                   />
                 </Box>
+                <Typography>MSFT</Typography>
+                <Typography sx={{ fontSize: "0.8rem" }}>20</Typography>
               </Box>
             </Item>
           );

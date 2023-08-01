@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 import * as React from "react";
 
 function createData(name, calories, fat, carbs, protein) {
@@ -28,16 +28,57 @@ export default function TableComp() {
         </tr>
         {rows.map((item) => {
           return (
-            <tr>
-              <td>1</td>
+            <tr className="table-data-row">
+              <td>
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/1.jpg"
+                  sx={{ width: 56, height: 56 }}
+                />
+              </td>
               <td>AAPL</td>
-              <td>192</td>
-              <td>192</td>
-              <td>192</td>
-              <td>192</td>
-              <td>192</td>
-              <td>192</td>
-              <td>192</td>
+              <td>
+                <span style={{ color: "#00A939" }}>
+                  192 <br />
+                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                </span>
+              </td>
+              <td>
+                <span style={{ color: "#DC1B1B" }}>
+                  192 <br />
+                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                </span>
+              </td>
+              <td>
+                <span style={{ color: "#00A939" }}>
+                  192 <br />
+                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                </span>
+              </td>
+              <td>
+                <span style={{ color: "#DC1B1B" }}>
+                  192 <br />
+                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                </span>
+              </td>
+              <td>
+                <span style={{ color: "#00A939" }}>
+                  192 <br />
+                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                </span>
+              </td>
+              <td>
+                <span style={{ color: "#DC1B1B" }}>
+                  192 <br />
+                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                </span>
+              </td>
+              <td>
+                <span style={{ color: "#00A939" }}>
+                  192 <br />
+                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                </span>
+              </td>
             </tr>
           );
         })}

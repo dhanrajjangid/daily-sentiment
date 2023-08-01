@@ -9,6 +9,7 @@ import {
   Paper,
   CardActions,
   Button,
+  Divider,
 } from "@mui/material";
 import React from "react";
 import "./Styles/index.css";
@@ -25,7 +26,28 @@ const Home = () => {
   console.log(window.innerWidth, "width");
   const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
-    <>
+    <Box className="home-box" sx={{ mt: 4 }}>
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          mb: 2,
+          px: window.innerWidth < 480 ? 1 : 0,
+        }}
+      >
+        <Typography variant="h4">DAILY SENTIMENT</Typography>
+        <Grid item md={2.7} sm={10}>
+          <hr
+            style={{
+              width: "100%",
+              backgroundColor: "#7E007B",
+              border: "none",
+              height: "0.2rem",
+            }}
+          />
+        </Grid>
+      </Grid>
       {/* first row */}
       <Box sx={{ flexGrow: 1, mb: 2 }}>
         <Grid container spacing={2}>
@@ -156,7 +178,7 @@ const Home = () => {
                 }}
               >
                 <Typography>TOP BUZZING STOCKS</Typography>
-                <Grid item>
+                <Grid item sx={{ height: "90%" }}>
                   <BuzzingChart />
                 </Grid>
               </Grid>
@@ -164,7 +186,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Box>
-    </>
+    </Box>
   );
 };
 

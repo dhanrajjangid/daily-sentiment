@@ -1,3 +1,8 @@
+@media only screen and (min-width: 600px) {
+  .home-box {
+    padding: 0 16px;
+  }
+}
 .sentiment-paper {
   background-color: rgb(37, 0, 97, 0.3) !important;
   border-radius: 20px !important;
@@ -30,6 +35,12 @@ table td {
   overflow-x: auto;
   width: 100%;
 }
+
+.table-component th,
+.table-component td {
+  white-space: nowrap;
+  max-width: 100px;
+}
 .table-component table tr:first-child {
   height: 37px;
 }
@@ -37,6 +48,10 @@ table td {
 .table-component table tr {
   background-color: #00327c;
   height: 62px;
+}
+
+.table-component table tr td:first-child {
+  padding-left: 0;
 }
 
 .table-component table th {
@@ -51,16 +66,35 @@ table td {
   border-radius: 0 650px 650px 0;
 }
 
-td:first-child {
-  border-radius: 10px 0 0 10px;
+.table-component td:first-child {
+  border-radius: 650px 0 0 650px;
+  background-color: #201f7b;
 }
-td:last-child {
+.table-component td:nth-child(2),
+.table-component td:nth-child(3) {
+  background-color: #201f7b;
+}
+.table-component td:last-child {
   border-radius: 0 10px 10px 0;
 }
 
 /* top table */
 .top-table {
-  overflow: "scroll";
+  overflow: auto;
+}
+
+.top-table td:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.top-table td:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.top-table th,
+.top-table td {
+  white-space: nowrap;
+  max-width: 100px;
 }
 
 .top-table::-webkit-scrollbar {
@@ -68,7 +102,7 @@ td:last-child {
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 
-.top-table table tr:first-child {
+.top-table table thead tr {
   vertical-align: bottom;
   height: 37px;
   background: transparent;

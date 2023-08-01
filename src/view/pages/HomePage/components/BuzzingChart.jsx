@@ -10,7 +10,7 @@ function BuzzingChart() {
     labels: ["APPL", "TSLA", "MSFT", "NVDA", "UNH", "SPY", "GOOGL"],
     datasets: [
       {
-        data: [200, 400, 600, 800, 1000, 1200, 1400],
+        data: [0, 400, 600, 800, 1000, 1200, 1400],
         backgroundColor: [
           "rgb(54, 162, 235)",
           "rgb(54, 162, 235)",
@@ -34,13 +34,17 @@ function BuzzingChart() {
   };
 
   const options = {
+    maintainAspectRatio: false,
     plugins: {
+      legend: false,
       datalabels: {
-        anchor: "end",
-        align: "top",
+        anchor: "center",
+        color: "white",
+        align: "end",
         formatter: Math.round,
         font: {
           weight: "bold",
+          size: "12rem",
         },
       },
     },
