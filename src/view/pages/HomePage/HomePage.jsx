@@ -12,16 +12,17 @@ import {
 } from "@mui/material";
 import React from "react";
 import "./Styles/index.css";
-import HeatMap from "./HeatMap";
-import SearchCard from "./SearchCard";
-import DailyComu from "./DailyComu";
-import MiniCards from "./MiniCards";
-import TableComp from "./TableComp";
-import TopTable from "./TopTable";
-import BuzzingChart from "./BuzzingChart";
-import SentimentCard from "./SentimentCard";
+import HeatMap from "./components/HeatMap";
+import SearchCard from "./components/SearchCard";
+import DailyComu from "./components/DailyComu";
+import MiniCards from "./components/MiniCards";
+import TableComp from "./components/TableComp";
+import TopTable from "./components/TopTable";
+import BuzzingChart from "./components/BuzzingChart";
+import SentimentCard from "./components/SentimentCard";
 
 const Home = () => {
+  console.log(window.innerWidth, "width");
   const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <>
@@ -38,7 +39,14 @@ const Home = () => {
             </Paper>
           </Grid>
           <Grid item md={2} xs={12}>
-            <Paper className="paper-back" sx={{ p: 2, height: 450 }}>
+            <Paper
+              className="paper-back"
+              sx={{
+                px: 1,
+                py: 2,
+                height: window.innerWidth < 480 ? 520 : 450,
+              }}
+            >
               <SearchCard />
             </Paper>
           </Grid>
@@ -103,22 +111,22 @@ const Home = () => {
 
       <Box sx={{ flexGrow: 1, mb: 2 }}>
         <Grid container>
-          <Grid item md={12} xs={12}>
-            <Paper
-              className="paper-back, sentiment-paper"
-              sx={{
-                px: 2,
-                py: 2,
-                height: 180,
-                overflow: "auto",
-              }}
-            >
-              <Typography sx={{ marginBottom: "1rem" }}>SENTIMENT</Typography>
+          <Grid
+            item
+            md={12}
+            xs={12}
+            sx={{
+              px: 2,
+              py: 2,
+              height: 280,
+              overflow: "auto",
+            }}
+          >
+            {/* <Typography sx={{ marginBottom: "1rem" }}>SENTIMENT</Typography> */}
 
-              <Grid item sx={{ display: "flex", gap: "1rem" }}>
-                <SentimentCard />
-              </Grid>
-            </Paper>
+            <Grid item sx={{ display: "flex", gap: "1rem" }}>
+              <SentimentCard />
+            </Grid>
           </Grid>
         </Grid>
       </Box>

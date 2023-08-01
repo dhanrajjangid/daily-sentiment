@@ -16,16 +16,28 @@ export default function TableComp() {
     <Box className="table-component">
       <table id="customers">
         <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Role</th>
+          <th></th>
+          <th></th>
+          <th>Today</th>
+          <th>1 Day Ago</th>
+          <th>2 Day Ago</th>
+          <th>Last Week</th>
+          <th>Last Month</th>
+          <th>Last Six Month</th>
+          <th>Last Year</th>
         </tr>
         {rows.map((item) => {
           return (
             <tr>
-              <td>{item.name}</td>
-              <td>12</td>
-              <td>Accountant</td>
+              <td>1</td>
+              <td>AAPL</td>
+              <td>192</td>
+              <td>192</td>
+              <td>192</td>
+              <td>192</td>
+              <td>192</td>
+              <td>192</td>
+              <td>192</td>
             </tr>
           );
         })}

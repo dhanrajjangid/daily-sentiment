@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS, registerables } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
-ChartJS.register(...registerables);
+ChartJS.register(...registerables, ChartDataLabels);
 
 function BuzzingChart() {
   const data = {
-    labels: [
-      "Label 1",
-      "Label 2",
-      "Label 3",
-      "Label 4",
-      "Label 5",
-      "Label 6",
-      "Label 7",
-    ],
+    labels: ["APPL", "TSLA", "MSFT", "NVDA", "UNH", "SPY", "GOOGL"],
     datasets: [
       {
         data: [200, 400, 600, 800, 1000, 1200, 1400],
@@ -41,6 +34,16 @@ function BuzzingChart() {
   };
 
   const options = {
+    plugins: {
+      datalabels: {
+        anchor: "end",
+        align: "top",
+        formatter: Math.round,
+        font: {
+          weight: "bold",
+        },
+      },
+    },
     tooltips: {
       enabled: false,
     },

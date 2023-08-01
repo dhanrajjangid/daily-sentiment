@@ -12,10 +12,24 @@ table {
 
 table td,
 #customers th {
-  padding: 0 20px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+#customers th {
+  /* width: 1%; */
+  font-size: 12px;
+}
+
+table td {
+  font-size: 14px;
 }
 
 /* table component (first table) */
+.table-component {
+  overflow-x: auto;
+  width: 100%;
+}
 .table-component table tr:first-child {
   height: 37px;
 }
@@ -72,19 +86,7 @@ td:last-child {
 }
 
 /* pie chart */
-#container1 {
-  height: 161px;
-  width: 161px;
-}
-
-#container1 svg .highcharts-background,
-#container1 svg .highcharts-credits,
-#container1 svg .highcharts-plot-background,
-#container1 svg .highcharts-plot-border {
-  display: none;
-}
-
-#container1 svg .highcharts-title {
-  font-size: 16px;
-  fill: rgb(244, 245, 244) !important;
+.doughnut-chart {
+  height: 130px;
+  width: 130px;
 }
