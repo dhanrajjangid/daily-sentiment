@@ -21,6 +21,7 @@ import TableComp from "./components/TableComp";
 import TopTable from "./components/TopTable";
 import BuzzingChart from "./components/BuzzingChart";
 import SentimentCard from "./components/SentimentCard";
+import HorizontalChart from "./components/HorizontalChart";
 
 const Home = () => {
   console.log(window.innerWidth, "width");
@@ -113,7 +114,7 @@ const Home = () => {
             <Grid item md={12} xs={12}>
               <Paper className="paper-back" sx={{ p: 2, height: 300 }}>
                 <Grid>
-                  <DailyComu />
+                  <HorizontalChart />
                 </Grid>
               </Paper>
             </Grid>

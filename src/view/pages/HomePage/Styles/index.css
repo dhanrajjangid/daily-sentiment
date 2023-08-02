@@ -124,3 +124,15 @@ table td {
   height: 130px;
   width: 130px;
 }
+
+/* apex chart daily commulative */
+
+/* apex chart horizontal */
+.apexcharts-yaxis-label,
+.apexcharts-xaxis-label {
+  fill: white;
+}
+
+.apexcharts-legend-text {
+  color: white !important;
+}

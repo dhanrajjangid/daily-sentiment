@@ -1,0 +1,12 @@
+.table-data-box {
+  background-color: #ee0303;
+  width: "60px";
+  height: "30px";
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.5rem;
+}
+/* doughnut chart */
+.doughnut-chart-sp500 {
+  width: 80px;
+  height: 80px;
+}
