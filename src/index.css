@@ -33,12 +33,12 @@ p {
   background: red;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 600px) {
   .app-bar {
     display: none !important;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
   .drawer {
     display: none !important;
   }
