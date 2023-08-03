@@ -51,7 +51,7 @@ const LineChart = () => {
       type: "datetime",
     },
     yaxis: {
-      opposite: true,
+      opposite: false,
     },
     legend: {
       horizontalAlign: "left",
