@@ -1,9 +1,4 @@
 Body {
   background-color: #190040;
-}
-@media only screen and (min-width: 600px) {
-  body {
-    max-height: 100vh;
-    overflow-y: hidden;
-  }
+  margin: auto;
 }

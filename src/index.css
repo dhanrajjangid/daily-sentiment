@@ -32,3 +32,24 @@ p {
   z-index: 2;
   background: red;
 }
+
+@media only screen and (min-width: 900px) {
+  .app-bar {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .drawer {
+    display: none !important;
+  }
+}
+
+.drawer svg {
+  fill: #200b41;
+}
+
+/* .drawer .MuiToolbar-root,
+.drawer .MuiList-root {
+  background-color: #190040;
+  color: white;
+} */

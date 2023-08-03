@@ -20,6 +20,7 @@ export default function HorizontalChart() {
       toolbar: {
         show: false,
       },
+      offsetY: 10,
     },
     colors: ["#00DE4C", "#EE0303"],
     plotOptions: {
@@ -88,7 +89,7 @@ export default function HorizontalChart() {
     legend: {
       position: "top",
       offsetY: 2,
-      offsetX: 130,
+      offsetX: 100,
     },
   };
 
@@ -98,7 +99,7 @@ export default function HorizontalChart() {
         options={options}
         series={series}
         type="bar"
-        height={140}
+        height={150}
       />
     </div>
   );

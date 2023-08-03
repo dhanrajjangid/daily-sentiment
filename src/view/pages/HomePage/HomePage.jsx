@@ -23,6 +23,7 @@ import BuzzingChart from "./components/BuzzingChart";
 import SentimentCard from "./components/SentimentCard";
 import HorizontalChart from "./components/HorizontalChart";
 import axios from "axios";
+import MiniCardsBearish from "./components/MiniCardsBearish";
 
 const Home = () => {
   // const latestListing = async (params) => {
@@ -56,14 +57,14 @@ const Home = () => {
       {/* first row */}
       <Box sx={{ flexGrow: 1, mb: 1 }}>
         <Grid container spacing={0.5}>
-          <Grid item md={2.5} xs={12}>
+          <Grid item md={2.8} xs={12}>
             <Paper className="paper-back" sx={{ p: 1, height: 190 }}>
               <Typography>Daily Sentiment Heat Map</Typography>
 
               <HeatMap />
             </Paper>
           </Grid>
-          <Grid item md={1.8} xs={12}>
+          <Grid item md={3} xs={12}>
             <Paper
               className="paper-back"
               sx={{
@@ -77,7 +78,7 @@ const Home = () => {
           </Grid>
 
           {/* daily commulative chart */}
-          <Grid item md={2.8} xs={12}>
+          <Grid item md={3.1} xs={12}>
             <Paper className="paper-back" sx={{ p: 1, height: 190 }}>
               <Grid
                 item
@@ -97,7 +98,7 @@ const Home = () => {
           </Grid>
 
           {/* top buzzing chart */}
-          <Grid item md={2.8} xs={12}>
+          <Grid item md={3.1} xs={12}>
             <Paper className="paper-back" sx={{ p: 1, height: 190 }}>
               <Grid
                 item
@@ -120,10 +121,66 @@ const Home = () => {
 
       {/* second row */}
       <Box sx={{ flexGrow: 1, mb: 1 }}>
+        <Grid container spacing={1}>
+          {/* first item - column */}
+          <Grid
+            container
+            item
+            md={2.8}
+            xs={12}
+            spacing={1}
+            sx={{ display: "flex", alignItems: "center" }}
+          >
+            <Grid item md={12} xs={12} sx={{ height: "40%" }}>
+              <MiniCards />
+            </Grid>
+            <Grid item md={12} xs={12} sx={{ height: "40%" }}>
+              <MiniCardsBearish />
+            </Grid>
+          </Grid>
+
+          {/* second item - column */}
+          <Grid item md={3} xs={12}>
+            <Paper className="paper-back" sx={{ p: 0, height: 155 }}>
+              <HorizontalChart />
+            </Paper>
+          </Grid>
+          {/* third item - column */}
+
+          <Grid
+            item
+            md={6.2}
+            xs={12}
+            sx={{
+              height: 160,
+            }}
+          >
+            <Grid
+              item
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: "1rem",
+                p: 0.1,
+                px: 1,
+                borderRadius: "0.5rem",
+                border: "2px solid #250061",
+                height: "100%",
+              }}
+            >
+              <SentimentCard />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* third row */}
+
+      <Box sx={{ flexGrow: 1, mb: 1 }}>
         <Grid container item spacing={0.5}>
           {/* first item */}
-          <Grid item md={5} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: 200 }}>
+          <Grid item md={5.8} xs={12}>
+            <Paper className="paper-back" sx={{ p: 1, height: 220 }}>
               <Typography sx={{ fontSize: "0.8rem" }}>
                 TOP MENTIOINS STOCK - WALLSTREET BET
               </Typography>
@@ -133,58 +190,10 @@ const Home = () => {
           </Grid>
           {/* second item */}
 
-          <Grid item md={5} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: 200 }}>
+          <Grid item md={6.2} xs={12}>
+            <Paper className="paper-back" sx={{ p: 1, height: 220 }}>
               <TableComp />
             </Paper>
-          </Grid>
-        </Grid>
-      </Box>
-
-      {/* third row */}
-
-      <Box sx={{ flexGrow: 1, mb: 1 }}>
-        <Grid container spacing={0.5}>
-          {/* first item - column */}
-          <Grid
-            item
-            className="circle-grid"
-            md={5}
-            xs={12}
-            sx={{
-              height: 155,
-              overflowY: "hidden",
-              overflowX: "auto",
-            }}
-          >
-            <Grid
-              item
-              sx={{
-                display: "flex",
-                gap: "1rem",
-                p: 0.5,
-                borderRadius: "0.5rem",
-                border: "2px solid #250061",
-              }}
-            >
-              <SentimentCard />
-            </Grid>
-          </Grid>
-
-          {/* second item - column */}
-          <Grid item md={2.8} xs={12}>
-            <Paper className="paper-back" sx={{ p: 0, height: 130 }}>
-              <HorizontalChart />
-            </Paper>
-          </Grid>
-          {/* third item - column */}
-          <Grid container item md={2} xs={12}>
-            <Grid item md={12} xs={12}>
-              <MiniCards />
-            </Grid>
-            <Grid item md={12} xs={12}>
-              <MiniCards />
-            </Grid>
           </Grid>
         </Grid>
       </Box>

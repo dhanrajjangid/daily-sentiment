@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-export default function MiniCards() {
+export default function MiniCardsBearish() {
   const marks = [
     {
       value: -100,
@@ -28,7 +28,7 @@ export default function MiniCards() {
         md={3.8}
         xs={3.8}
         sx={{
-          backgroundColor: "#006D33",
+          backgroundColor: "#B70606",
           borderRadius: "0.4rem 0 0 0.4rem",
           display: "flex",
           flexDirection: "column",
@@ -44,7 +44,7 @@ export default function MiniCards() {
         md={8.2}
         xs={8.2}
         sx={{
-          backgroundColor: "#B7ECC8",
+          backgroundColor: "#EDB6B6",
           borderRadius: "0 0.4rem 0.4rem 0",
           display: "flex",
           justifyContent: "center",
@@ -52,12 +52,12 @@ export default function MiniCards() {
         }}
       >
         <Box
-          className="slider-cards"
+          className="slider-cards brearish-slider-card"
           sx={{ width: "70%", display: "flex", alignItems: "flex-end" }}
         >
           <Slider
             aria-label="Always visible"
-            defaultValue={30}
+            defaultValue={-50}
             min={-100}
             max={100}
             getAriaValueText={valuetext}

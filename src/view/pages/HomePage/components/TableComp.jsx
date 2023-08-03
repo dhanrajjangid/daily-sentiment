@@ -9,6 +9,8 @@ const rows = [
   createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
   createData("Eclair", 262, 16.0, 24, 6.0),
   createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
 ];
 
 export default function TableComp() {
@@ -40,43 +42,43 @@ export default function TableComp() {
               <td>
                 <span style={{ color: "#00A939" }}>
                   192 <br />
-                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
                 </span>
               </td>
               <td>
                 <span style={{ color: "#DC1B1B" }}>
                   192 <br />
-                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
                 </span>
               </td>
               <td>
                 <span style={{ color: "#00A939" }}>
                   192 <br />
-                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
                 </span>
               </td>
               <td>
                 <span style={{ color: "#DC1B1B" }}>
                   192 <br />
-                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
                 </span>
               </td>
               <td>
                 <span style={{ color: "#00A939" }}>
                   192 <br />
-                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
                 </span>
               </td>
               <td>
                 <span style={{ color: "#DC1B1B" }}>
                   192 <br />
-                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
                 </span>
               </td>
               <td>
                 <span style={{ color: "#00A939" }}>
                   192 <br />
-                  <span style={{ fontSize: "0.7rem" }}>1.25 (2.3%)</span>
+                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
                 </span>
               </td>
             </tr>

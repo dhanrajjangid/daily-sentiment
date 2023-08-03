@@ -39,16 +39,21 @@ export default function TopTable() {
                       gap: "0.5rem",
                     }}
                   >
-                    <Avatar
-                      alt="Remy Sharp"
-                      src="/static/images/avatar/1.jpg"
-                      sx={{ width: 30, height: 30 }}
-                    />
+                    <Box sx={{ py: 0.2 }}>
+                      <Avatar
+                        alt="Remy Sharp"
+                        src="/static/images/avatar/1.jpg"
+                        sx={{ width: 30, height: 30 }}
+                      />
+                    </Box>
                     {item.name}
                   </Box>
                 </td>
                 <td>
-                  192.98 <span style={{ color: "#EE0303" }}>(1.09%)</span>
+                  192.98{" "}
+                  <span style={{ color: "#EE0303", fontSize: "0.7rem" }}>
+                    (1.09%)
+                  </span>
                 </td>
                 <td>150</td>
                 <td>

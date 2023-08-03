@@ -1,6 +1,9 @@
 @media only screen and (min-width: 600px) {
   .home-box {
-    padding: 0 16px;
+    padding: 0;
+    height: calc(100vh - 50px);
+    width: calc(100% - 230px);
+    margin-left: 230px;
   }
 }
 .sentiment-paper {
@@ -32,8 +35,12 @@ table td {
 
 /* table component (first table) */
 .table-component {
-  overflow-x: auto;
+  overflow: auto;
   width: 100%;
+  height: 100%;
+}
+.table-component table {
+  height: 100%;
 }
 
 .table-component th,
@@ -58,10 +65,19 @@ table td {
   text-align: left;
   background-color: #2e15e4;
 }
-
+.table-component table tr:first-child {
+  background: transparent;
+}
 .table-component table tr:first-child th:first-child {
+  background: transparent;
+}
+.table-component table tr:first-child th:nth-child(2) {
+  background: transparent;
+}
+.table-component table tr:first-child th:nth-child(3) {
   border-radius: 650px 0 0 650px;
 }
+
 .table-component table tr:first-child th:last-child {
   border-radius: 0 650px 650px 0;
 }
@@ -98,7 +114,8 @@ table td {
 }
 
 .top-table::-webkit-scrollbar,
-.circle-grid::-webkit-scrollbar {
+.circle-grid::-webkit-scrollbar,
+.table-component::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
@@ -144,10 +161,11 @@ table td {
 }
 .MuiSlider-valueLabel {
   top: 5px !important;
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .MuiSlider-valueLabelLabel {
   color: black;
+  background-color: transparent !important;
 }
 
 .MuiSlider-valueLabel:before {
@@ -157,7 +175,11 @@ table td {
   width: 20px;
   height: 10px;
   border-radius: 0;
-  background-color: green;
+  background-color: #006c32;
+}
+
+.brearish-slider-card .MuiSlider-thumb {
+  background-color: #b70606;
 }
 
 .slider-cards .MuiSlider-markLabel {

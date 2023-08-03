@@ -68,7 +68,7 @@ export default function TopCircleChart(props) {
     <>
       <Box
         sx={{
-          display: window.innerWidth > 480 ? "flex" : "none",
+          display: "flex",
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: props.item.bgColor,
@@ -96,50 +96,6 @@ export default function TopCircleChart(props) {
         <Typography>16</Typography>
         <Typography sx={{ fontSize: "0.9rem" }}>452.68</Typography>
       </Box>
-
-      {/* for mobile */}
-      {/* <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Box
-          sx={{
-            display: window.innerWidth < 480 ? "flex" : "none",
-            display: "none",
-            justifyContent: "center",
-            gap: "1rem",
-            backgroundColor: props.item.bgColor,
-            p: 1,
-            borderRadius: "0.5rem",
-            padding: "1rem 0.4rem",
-            width: "80%",
-          }}
-        >
-          <div className="doughnut-chart" style={{ marginBottom: "0.5rem" }}>
-            <Doughnut
-              data={donutChart}
-              options={options}
-              plugins={[
-                {
-                  beforeDraw: function (chart) {
-                    drawInnerText(chart);
-                  },
-                },
-              ]}
-            />
-          </div>
-
-          <Typography sx={{ fontSize: "0.8rem" }}>SENTIMENT</Typography>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              textAlign: "center",
-            }}
-          >
-            <Typography variant="h6">16</Typography>
-            <Typography sx={{ fontSize: "0.9rem" }}>452.68(0.55%)</Typography>
-          </Box>
-        </Box>
-      </Box> */}
     </>
   );
 }
