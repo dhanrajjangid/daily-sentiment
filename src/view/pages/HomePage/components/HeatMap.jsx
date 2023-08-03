@@ -64,20 +64,6 @@ const heights = [
     "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
     4.3
   ),
-  createData(
-    "#B70606",
-    80,
-    3.7,
-    "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
-    4.3
-  ),
-  createData(
-    "#B70606",
-    80,
-    3.7,
-    "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
-    4.3
-  ),
 ];
 
 // const heights = [270, 160, 160, 105, 105, 140, 140, 140];
@@ -92,7 +78,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function FixedSpacing() {
   return (
     <Box sx={{ width: "100%" }}>
-      <Masonry columns={5} spacing={0.5}>
+      <Masonry columns={4} spacing={0.5}>
         {heights.map((item, index) => {
           let heights = item.height;
           return (
