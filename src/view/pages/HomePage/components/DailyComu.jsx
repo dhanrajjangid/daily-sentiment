@@ -33,7 +33,7 @@ function DailyComu() {
   const options = {
     chart: {
       type: "bar",
-      height: 350,
+      height: 200,
       stacked: true,
       toolbar: {
         show: false,
@@ -102,7 +102,7 @@ function DailyComu() {
         "02:50",
         "03:00",
       ],
-      tickAmount: 20,
+      tickAmount: 10,
       labels: {
         hideOverlappingLabels: true,
       },
@@ -121,7 +121,8 @@ function DailyComu() {
 
     legend: {
       position: "top",
-      offsetY: 40,
+      offsetY: 10,
+      offsetX: 60,
     },
   };
 
@@ -140,7 +141,7 @@ function DailyComu() {
           options={options}
           series={series}
           type="bar"
-          height={350}
+          height={180}
         />
       </Box>
     </>

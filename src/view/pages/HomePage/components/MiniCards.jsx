@@ -1,70 +1,69 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Slider } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
 export default function MiniCards() {
+  const marks = [
+    {
+      value: -100,
+      label: "Bearish",
+    },
+
+    {
+      value: 100,
+      label: "Bullish",
+    },
+  ];
+
+  function valuetext(value) {
+    return `${value}°C`;
+  }
   return (
-    <Card
-      item
-      sx={{
-        display: "flex",
-        height: 70,
-        borderRadius: "10px ",
-        color: "white",
-      }}
-    >
+    <Grid container item sx={{ height: "50px" }}>
       <Grid
-        container
         item
-        md={4}
+        md={3.8}
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: "#006C32",
-        }}
-      >
-        <Box
-          sx={{
-            flex: "1 0 auto",
-            p: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <Typography>SPY</Typography>
-          <Typography sx={{ fontSize: "0.6rem" }}>452.68(0.55%)</Typography>
-        </Box>
-      </Grid>
-      <Box
-        sx={{
+          backgroundColor: "#006D33",
+          borderRadius: "0.4rem 0 0 0.4rem",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          backgroundColor: "#B6EDC8",
-          px: 1,
+          alignItems: "center",
+        }}
+      >
+        <Typography sx={{ fontSize: "1rem" }}> SPY</Typography>
+        <Typography sx={{ fontSize: "0.6rem" }}> 452.68(0.55%)</Typography>
+      </Grid>
+      <Grid
+        item
+        md={8.2}
+        sx={{
+          backgroundColor: "#B7ECC8",
+          borderRadius: "0 0.4rem 0.4rem 0",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Box
-          sx={{
-            backgroundColor: "white",
-            height: "10px",
-            width: "140px",
-          }}
+          className="slider-cards"
+          sx={{ width: "70%", display: "flex", alignItems: "flex-end" }}
         >
-          <Box
-            sx={{
-              backgroundColor: "green",
-              height: "10px",
-              // width: "10px",
-              left: "50%",
-            }}
-          ></Box>
+          <Slider
+            aria-label="Always visible"
+            defaultValue={80}
+            min={-100}
+            max={100}
+            getAriaValueText={valuetext}
+            marks={marks}
+            valueLabelDisplay="on"
+          />
         </Box>
-      </Box>
-    </Card>
+      </Grid>
+    </Grid>
   );
 }

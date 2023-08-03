@@ -26,10 +26,10 @@ export default function CircleChart(props) {
     responsive: true,
     maintainAspectRatio: true,
     defaultFontSize: "14px",
-    cutout: 50,
+    cutout: 25,
     title: {
       display: true,
-      text: "Total Feedback",
+      // text: "Total Feedback",
       fontSize: 30,
     },
 
@@ -72,7 +72,7 @@ export default function CircleChart(props) {
         alignItems: "center",
       }}
     >
-      <div className="doughnut-chart" style={{ marginBottom: "0.5rem" }}>
+      <div className="doughnut-chart" style={{ marginBottom: "0.2rem" }}>
         <Doughnut
           data={donutChart}
           options={options}
@@ -93,14 +93,14 @@ export default function CircleChart(props) {
           alignItems: "center",
           backgroundColor: props.item.bgColor,
           p: 1,
-          borderRadius: " 0 0 0.5rem 0.5rem",
-          padding: "0.4rem 0.4rem",
+          borderRadius: " 0 0 0.2rem 0.2rem",
+          padding: "0.1rem 0.3rem",
         }}
       >
         {/* <Typography sx={{ fontSize: "0.8rem" }}>SENTIMENT</Typography> */}
 
-        <Typography variant="h6">16</Typography>
-        <Typography sx={{ fontSize: "0.9rem" }}>452.68(0.55%)</Typography>
+        <Typography>16</Typography>
+        <Typography sx={{ fontSize: "0.7rem" }}>452.68(0.55%)</Typography>
       </Box>
     </Box>
   );

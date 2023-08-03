@@ -11,7 +11,10 @@ function BuzzingChart() {
   const options = {
     chart: {
       type: "bar",
-      height: 350,
+      height: 200,
+      toolbar: {
+        show: false,
+      },
     },
     grid: {
       xaxis: {
@@ -36,17 +39,22 @@ function BuzzingChart() {
     },
     xaxis: {
       categories: [
-        "South Korea",
-        "Canada",
-        "United Kingdom",
-        "Netherlands",
-        "Italy",
-        "France",
-        "Japan",
-        "United States",
-        "China",
-        "Germany",
+        "APPL",
+        "TSLA",
+        "MSFT",
+        "META",
+        "NETL",
+        "AAPL",
+        "TSLA",
+        "META",
+        "MSFT",
+        "TSLA",
       ],
+      labels: {
+        style: {
+          fontSize: "0.6rem",
+        },
+      },
     },
   };
 
@@ -57,7 +65,7 @@ function BuzzingChart() {
           options={options}
           series={series}
           type="bar"
-          height={450}
+          height={180}
         />
       </Box>
     </>

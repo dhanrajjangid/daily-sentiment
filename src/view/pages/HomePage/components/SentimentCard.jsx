@@ -25,11 +25,11 @@ const dataArr = [
 const SentimentCard = () => {
   return (
     <>
-      <Grid container spacing={1.5} wrap="nowrap" sx={{ display: "flex" }}>
+      <Grid container spacing={1} wrap="nowrap" sx={{ display: "flex" }}>
         {dataArr.map((item) => {
           console.log(item, "item");
           return (
-            <Grid item md={2}>
+            <Grid item md={4}>
               <CircleChart item={item} />
             </Grid>
           );

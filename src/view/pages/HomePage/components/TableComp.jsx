@@ -33,7 +33,7 @@ export default function TableComp() {
                 <Avatar
                   alt="Remy Sharp"
                   src="/static/images/avatar/1.jpg"
-                  sx={{ width: 56, height: 56 }}
+                  sx={{ width: 35, height: 35 }}
                 />
               </td>
               <td>AAPL</td>

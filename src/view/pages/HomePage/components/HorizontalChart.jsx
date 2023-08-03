@@ -15,8 +15,11 @@ export default function HorizontalChart() {
   const options = {
     chart: {
       type: "bar",
-      height: 440,
+      height: 100,
       stacked: true,
+      toolbar: {
+        show: false,
+      },
     },
     colors: ["#00DE4C", "#EE0303"],
     plotOptions: {
@@ -49,6 +52,11 @@ export default function HorizontalChart() {
       lines: {
         show: false,
       },
+      labels: {
+        style: {
+          fontSize: "0.6rem",
+        },
+      },
     },
     tooltip: {
       shared: false,
@@ -64,7 +72,7 @@ export default function HorizontalChart() {
       },
     },
     title: {
-      text: "Chart Title",
+      // text: "Chart Title",
     },
     xaxis: {
       categories: ["TSLA", "AMZN", "NVDA", "MSFT", "AAPL"],
@@ -77,11 +85,21 @@ export default function HorizontalChart() {
         },
       },
     },
+    legend: {
+      position: "top",
+      offsetY: 2,
+      offsetX: 130,
+    },
   };
 
   return (
     <div id="chart">
-      <ReactApexChart options={options} series={series} type="bar" />
+      <ReactApexChart
+        options={options}
+        series={series}
+        type="bar"
+        height={140}
+      />
     </div>
   );
 }

@@ -16,7 +16,7 @@ const rows = [
 
 export default function TopTable() {
   return (
-    <Box className="top-table" sx={{ height: "100%" }}>
+    <Box className="top-table" sx={{ height: "90%" }}>
       <table style={{ height: "100%", width: "100%" }}>
         <thead>
           <tr>
@@ -42,6 +42,7 @@ export default function TopTable() {
                     <Avatar
                       alt="Remy Sharp"
                       src="/static/images/avatar/1.jpg"
+                      sx={{ width: 30, height: 30 }}
                     />
                     {item.name}
                   </Box>
@@ -53,7 +54,7 @@ export default function TopTable() {
                 <td>
                   <Button
                     variant="contained"
-                    sx={{ backgroundColor: "#EE0303", px: 2 }}
+                    sx={{ backgroundColor: "#EE0303", px: 1, py: 0 }}
                     size="small"
                   >
                     Bearish

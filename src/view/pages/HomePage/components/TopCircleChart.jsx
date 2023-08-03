@@ -26,7 +26,7 @@ export default function TopCircleChart(props) {
     responsive: true,
     maintainAspectRatio: true,
     defaultFontSize: "14px",
-    cutout: 50,
+    cutout: 25,
     title: {
       display: true,
       text: "Total Feedback",
@@ -73,8 +73,8 @@ export default function TopCircleChart(props) {
           alignItems: "center",
           backgroundColor: props.item.bgColor,
           p: 1,
-          borderRadius: "0.5rem",
-          padding: "1rem 0.4rem",
+          borderRadius: "0.2rem",
+          padding: "0.4rem 0.4rem",
         }}
       >
         <div className="doughnut-chart" style={{ marginBottom: "0.5rem" }}>
@@ -93,16 +93,16 @@ export default function TopCircleChart(props) {
 
         {/* <Typography sx={{ fontSize: "0.8rem" }}>SENTIMENT</Typography> */}
 
-        <Typography variant="h6">16</Typography>
-        <Typography sx={{ fontSize: "0.9rem" }}>452.68(0.55%)</Typography>
+        <Typography>16</Typography>
+        <Typography sx={{ fontSize: "0.9rem" }}>452.68</Typography>
       </Box>
 
       {/* for mobile */}
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      {/* <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box
           sx={{
             display: window.innerWidth < 480 ? "flex" : "none",
-            // display: "none",
+            display: "none",
             justifyContent: "center",
             gap: "1rem",
             backgroundColor: props.item.bgColor,
@@ -126,7 +126,7 @@ export default function TopCircleChart(props) {
             />
           </div>
 
-          {/* <Typography sx={{ fontSize: "0.8rem" }}>SENTIMENT</Typography> */}
+          <Typography sx={{ fontSize: "0.8rem" }}>SENTIMENT</Typography>
           <Box
             sx={{
               display: "flex",
@@ -139,7 +139,7 @@ export default function TopCircleChart(props) {
             <Typography sx={{ fontSize: "0.9rem" }}>452.68(0.55%)</Typography>
           </Box>
         </Box>
-      </Box>
+      </Box> */}
     </>
   );
 }

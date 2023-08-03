@@ -34,9 +34,9 @@ const SearchCard = () => {
         />
       </Grid>
       <Grid container item sx={{ display: "flex" }} md={12} sm={12}>
-        <Grid item sx={{ textAlign: "center" }} md={12} xs={12} sm={6}>
+        <Grid item sx={{ textAlign: "center" }} md={6} xs={6} sm={6}>
           <img
-            style={{ maxWidth: "60%", maxHeight: "60%" }}
+            style={{ maxWidth: "80%", maxHeight: "80%" }}
             src="https://www.freepnglogos.com/uploads/tesla-logo-png-27.png"
             alt=""
           />
@@ -44,7 +44,7 @@ const SearchCard = () => {
           <Typography>$265.12</Typography>
         </Grid>
 
-        <Grid item md={12} xs={12} sm={6}>
+        <Grid item md={6} xs={6} sm={6}>
           <TopCircleChart item={dataObj} />
         </Grid>
       </Grid>

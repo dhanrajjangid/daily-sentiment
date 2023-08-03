@@ -10,56 +10,70 @@ function createData(bgColor, height, fat, image, protein) {
 const heights = [
   createData(
     "#B3BBB7",
-    270,
+    80,
     6.0,
     "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
     4.0
   ),
   createData(
     "#27D276",
-    140,
+    80,
     9.0,
     "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/625px-Apple_logo_black.svg.png",
     4.3
   ),
   createData(
     "#B70606",
-    140,
+    80,
     16.0,
     "https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png",
     6.0
   ),
   createData(
     "#B3BBB7",
-    125,
+    80,
     3.7,
     "https://www.freepnglogos.com/uploads/tesla-logo-png-27.png",
     4.3
   ),
   createData(
     "#B3BBB7",
-    125,
+    80,
     3.7,
     "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
     4.3
   ),
   createData(
     "#27D276",
-    140,
+    80,
     3.7,
     "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
     4.3
   ),
   createData(
     "#B70606",
-    140,
+    80,
     3.7,
     "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
     4.3
   ),
   createData(
     "#B70606",
-    140,
+    80,
+    3.7,
+    "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
+    4.3
+  ),
+  createData(
+    "#B70606",
+    80,
+    3.7,
+    "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
+    4.3
+  ),
+  createData(
+    "#B70606",
+    80,
     3.7,
     "https://img.freepik.com/free-icon/microsoft_318-566086.jpg",
     4.3
@@ -78,7 +92,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function FixedSpacing() {
   return (
     <Box sx={{ width: "100%" }}>
-      <Masonry columns={3} spacing={0.5}>
+      <Masonry columns={5} spacing={0.5}>
         {heights.map((item, index) => {
           let heights = item.height;
           return (
@@ -99,20 +113,20 @@ export default function FixedSpacing() {
                   sx={{
                     backgroundColor: "white",
                     borderRadius: "50%",
-                    width: "60px",
-                    height: "60px",
+                    width: "30px",
+                    height: "30px",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
                 >
                   <img
-                    style={{ height: "30px", width: "30px" }}
+                    style={{ height: "15px", width: "15px" }}
                     src={item.image}
                     alt=""
                   />
                 </Box>
-                <Typography>MSFT</Typography>
+                <Typography sx={{ fontSize: "0.8rem" }}>MSFT</Typography>
                 <Typography sx={{ fontSize: "0.8rem" }}>20</Typography>
               </Box>
             </Item>

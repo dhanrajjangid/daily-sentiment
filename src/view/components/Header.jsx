@@ -9,10 +9,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Header() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="transparent" elevation={0}>
-        <Toolbar>
-          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+    <Box>
+      <AppBar
+        position="static"
+        elevation={0}
+        sx={{ height: "30px", borderRadius: 2 }}
+      >
+        <Toolbar sx={{ maxHeight: "100%", minHeight: "0!important" }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             LOGO
           </Typography>
           <IconButton
