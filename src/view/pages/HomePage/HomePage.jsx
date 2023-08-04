@@ -9,6 +9,7 @@ import "./Styles/homePage.css";
 import { TabPanel, TabContext, TabList } from "@mui/lab";
 import DailySentiment from "./DailySentiment";
 import SP500 from "../SP500/SP500";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Home() {
   const [value, setValue] = useState("0");
@@ -38,39 +39,35 @@ export default function Home() {
     <Box className="home-box">
       <TabContext value={value}>
         <Box className="header-tabs">
-          <input
-            className={`header-search ${inputClass}`}
-            type="text"
-            placeholder="Search here..."
-            onChange={handleSearchValue}
-            onClick={handleSearchClick}
-            value={searchValue}
-            style={{
-              height: "40px",
-              backgroundColor: "#2B3C4C",
-              borderRadius: "20px",
-              padding: "0 20px",
-              border: "none",
-              outline: "none",
-              color: "white",
-            }}
-          />
+          <Box className="search-bar-header" sx={{ position: "relative" }}>
+            <input
+              className={`header-search ${inputClass}`}
+              type="text"
+              placeholder="Search here..."
+              onChange={handleSearchValue}
+              onClick={handleSearchClick}
+              value={searchValue}
+              style={{
+                fontSize: "1rem",
+                height: "40px",
+                backgroundColor: "white",
+                borderRadius: "20px",
+                padding: " 0px 20px 0px 50px ",
+                border: "none",
+                outline: "none",
+                color: "white",
+              }}
+            />
+            <SearchIcon sx={{ position: "absolute", left: "5%", top: "20%" }} />
+          </Box>
           <TabList
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab
-              sx={{ backgroundColor: "white", borderRadius: " 20px 0 0 20px" }}
-              label="S&P500"
-              value="1"
-            />
-            <Tab sx={{ backgroundColor: "white" }} label="TOP10" value="2" />
-            <Tab
-              sx={{ backgroundColor: "white", borderRadius: "0 20px 20px 0" }}
-              label="ETF"
-              value="3"
-            />
+            <Tab className="tab-pills" label="S&P500" value="1" />
+            <Tab className="tab-pills" label="DJIA" value="2" />
+            <Tab className="tab-pills" label="NASDAQ" value="3" />
           </TabList>
         </Box>
         <Box className="home-tabpanel">

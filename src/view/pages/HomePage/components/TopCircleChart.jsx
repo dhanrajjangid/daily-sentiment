@@ -26,7 +26,7 @@ export default function TopCircleChart(props) {
     responsive: true,
     maintainAspectRatio: true,
     defaultFontSize: "14px",
-    cutout: 50,
+    cutout: 42,
     title: {
       display: true,
       // text: "Total Feedback",
@@ -44,7 +44,7 @@ export default function TopCircleChart(props) {
 
   return (
     <div
-      className="doughnut-chart "
+      className="doughnut-chart-top"
       style={{
         position: "relative",
         zIndex: 2,
@@ -56,8 +56,8 @@ export default function TopCircleChart(props) {
         sx={{
           position: "absolute",
 
-          height: "130px",
-          width: "130px",
+          height: "115px",
+          width: "115px",
           top: "0%",
           left: "0%",
           borderRadius: "50%",

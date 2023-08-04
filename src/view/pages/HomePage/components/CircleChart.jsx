@@ -15,7 +15,7 @@ export default function CircleChart(props) {
       {
         data: [10, 50],
         // backgroundColor: ["#808080", "#808080", "#808080", "#808080"],
-        backgroundColor: [props.item.circleColour, "#808080"],
+        backgroundColor: ["#808080", props.item.circleColour],
         borderWidth: 0,
       },
     ],
@@ -26,7 +26,7 @@ export default function CircleChart(props) {
     responsive: true,
     maintainAspectRatio: true,
     defaultFontSize: "14px",
-    cutout: 50,
+    cutout: 40,
 
     plugins: {
       legend: false,
@@ -63,63 +63,76 @@ export default function CircleChart(props) {
   };
 
   return (
-    <div
-      className="doughnut-chart "
-      style={{
-        position: "relative",
-      }}
-    >
-      <Doughnut
-        data={donutChart}
-        options={options}
-        plugins={[
-          {
-            beforeDraw: function (chart) {
-              drawInnerText(chart);
-            },
-          },
-        ]}
-      />
-
-      <Box
-        sx={{
-          position: "absolute",
-
-          height: "130px",
-          width: "130px",
-          top: "0%",
-          left: "0%",
-          borderRadius: "50%",
-
-          zIndex: -1,
-          backgroundColor: props.item.bgColor,
-        }}
-      >
+    <>
+      <Box>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
-            height: "100%",
-            pt: 0.5,
           }}
         >
-          <Typography sx={{ fontSize: "0.7rem" }}>SENTIMENT</Typography>
-          <hr
-            style={{
-              width: "60%",
-              margin: 0,
-              height: "0.1rem",
-              border: 0,
-              backgroundColor: props.item.circleColour,
-            }}
-          />
-          <Typography>TSLA</Typography>
-          <Typography sx={{ fontSize: "0.7rem" }}>452.68</Typography>
-          <Typography>26</Typography>
+          <Typography sx={{ fontSize: "0.7rem" }}>TSLA</Typography>
+          <Typography sx={{ fontSize: "0.7rem" }}>$256.15(2.62%)</Typography>
         </Box>
+        <div
+          className="doughnut-chart "
+          style={{
+            position: "relative",
+          }}
+        >
+          <Doughnut
+            data={donutChart}
+            options={options}
+            plugins={[
+              {
+                beforeDraw: function (chart) {
+                  drawInnerText(chart);
+                },
+              },
+            ]}
+          />
+
+          <Box
+            sx={{
+              position: "absolute",
+
+              height: "100px",
+              width: "100px",
+              top: "0%",
+              left: "0%",
+              borderRadius: "50%",
+
+              zIndex: -1,
+              backgroundColor: props.item.bgColor,
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "100%",
+                pt: 0.5,
+              }}
+            >
+              <Typography sx={{ fontSize: "0.7rem" }}>SENTIMENT</Typography>
+              <hr
+                style={{
+                  width: "60%",
+                  margin: 0,
+                  height: "0.1rem",
+                  border: 0,
+                  backgroundColor: props.item.circleColour,
+                }}
+              />
+
+              <Typography variant="h6">26</Typography>
+            </Box>
+          </Box>
+        </div>
       </Box>
-    </div>
+    </>
   );
 }

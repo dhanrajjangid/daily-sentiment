@@ -17,7 +17,7 @@ const rows = [
 export default function SPTable() {
   return (
     <Box className="top-table" sx={{ height: "100%" }}>
-      <table style={{ height: "100%", width: "100%" }}>
+      <table id="sp-table" style={{ height: "100%", width: "100%" }}>
         <thead>
           <tr>
             <th>Stock Name</th>

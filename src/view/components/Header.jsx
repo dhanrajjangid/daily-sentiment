@@ -59,7 +59,7 @@ export default function Header() {
         <Toolbar />
         <Divider />
         <List>
-          {["Daily Sentiment", "SP500", "DJIA", "NASDAQ"].map((text, index) => {
+          {["", "", "", ""].map((text, index) => {
             return (
               <ListItem
                 key={text}
@@ -80,7 +80,7 @@ export default function Header() {
         </List>
         <Divider />
         <List>
-          {["Daily Sentiment", "SP500", "DJIA", "NASDAQ"].map((text, index) => (
+          {["", "", "", ""].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>

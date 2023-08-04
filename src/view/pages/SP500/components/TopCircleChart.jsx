@@ -26,7 +26,7 @@ export default function CircleChart(props) {
     responsive: true,
     maintainAspectRatio: true,
     defaultFontSize: "14px",
-    cutout: 50,
+    cutout: 42,
 
     plugins: {
       legend: false,
@@ -64,7 +64,7 @@ export default function CircleChart(props) {
 
   return (
     <div
-      className="doughnut-chart "
+      className="doughnut-chart-top "
       style={{
         position: "relative",
         zIndex: 1,
@@ -86,8 +86,8 @@ export default function CircleChart(props) {
         sx={{
           position: "absolute",
 
-          height: "130px",
-          width: "130px",
+          height: "110px",
+          width: "110px",
           top: "0%",
           left: "0%",
           borderRadius: "50%",
@@ -116,8 +116,6 @@ export default function CircleChart(props) {
               backgroundColor: props.item.circleColour,
             }}
           />
-          <Typography>TSLA</Typography>
-          <Typography sx={{ fontSize: "0.7rem" }}>452.68</Typography>
           <Typography>26</Typography>
         </Box>
       </Box>

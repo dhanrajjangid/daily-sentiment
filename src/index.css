@@ -18,8 +18,9 @@ p {
 }
 
 .paper-back {
+  background: transparent !important;
   color: #ffffff !important;
-  background: #131c27 !important;
+  border: 2px solid #131c27 !important;
   border-radius: 10px !important;
 }
 

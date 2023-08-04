@@ -25,7 +25,7 @@ export default function TableComp() {
           <th>2 Day Ago</th>
           <th>Last Week</th>
           <th>Last Month</th>
-          <th>Last Six Month</th>
+          <th>Last 6 Month</th>
           <th>Last Year</th>
         </tr>
         {rows.map((item) => {

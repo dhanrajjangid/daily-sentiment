@@ -1,13 +1,20 @@
 .header-tabs {
   border-radius: 20px;
-  background-color: white;
+  background-color: transparent;
   padding: 0 0 0 0;
   display: flex;
   align-items: center;
+  gap: 20px;
   border-bottom: 1;
   border-color: divider;
   height: 40px;
-  background-color: white;
+}
+.header-tabs .tab-pills {
+  margin-right: 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 20px;
 }
 
 .header-tabs .MuiTabs-root {
@@ -27,8 +34,8 @@
 }
 
 .header-tabs .Mui-selected {
-  background-color: #2b3c4c;
-  color: white !important;
+  background-color: white;
+  color: black !important;
   border-radius: 20px;
   padding: 0;
 }
@@ -39,16 +46,29 @@
 .header-tabs input::placeholder {
   color: white;
   font-size: 1rem;
+  padding-left: 10%;
+}
+.header-tabs input {
+  padding-left: 20%;
 }
 .header-tabs .selected-search {
-  background-color: 851083 !important;
-  border-right: 1px solid black;
+  background-color: #white !important;
+  color: black !important;
 }
 
 .header-tabs .unselected-search {
-  background-color: white !important;
-  border-right: 1px solid black;
+  background-color: transparent !important;
+  border: 2px solid white !important;
 }
+
+.header-tabs .selected-search::placeholder {
+  color: black;
+}
+
 .header-tabs .unselected-search::placeholder {
   color: grey;
+}
+
+.search-bar-header svg {
+  fill: black;
 }
