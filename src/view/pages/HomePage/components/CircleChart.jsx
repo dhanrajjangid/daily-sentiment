@@ -27,15 +27,13 @@ export default function CircleChart(props) {
     maintainAspectRatio: true,
     defaultFontSize: "14px",
     cutout: 50,
-    title: {
-      display: true,
-      // text: "Total Feedback",
-      fontSize: 30,
-    },
 
     plugins: {
       legend: false,
       datalabels: false,
+      tooltip: {
+        enabled: false,
+      },
     },
   };
 

@@ -22,6 +22,9 @@ export default function HorizontalChart() {
       },
       offsetY: 10,
     },
+    tooltip: {
+      enabled: false,
+    },
     colors: ["#00DE4C", "#EE0303"],
     plotOptions: {
       bar: {
@@ -59,19 +62,7 @@ export default function HorizontalChart() {
         },
       },
     },
-    tooltip: {
-      shared: false,
-      x: {
-        formatter: function (val) {
-          return val;
-        },
-      },
-      y: {
-        formatter: function (val) {
-          return Math.abs(val) + "%";
-        },
-      },
-    },
+
     title: {
       // text: "Chart Title",
     },

@@ -16,6 +16,9 @@ function BuzzingChart() {
         show: false,
       },
     },
+    tooltip: {
+      enabled: false,
+    },
     grid: {
       xaxis: {
         lines: {

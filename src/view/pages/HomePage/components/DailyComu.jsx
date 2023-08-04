@@ -42,6 +42,10 @@ function DailyComu() {
         enabled: true,
       },
     },
+
+    tooltip: {
+      enabled: false,
+    },
     responsive: [
       {
         breakpoint: 480,

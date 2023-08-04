@@ -36,6 +36,9 @@ export default function TopCircleChart(props) {
     plugins: {
       legend: false,
       datalabels: false,
+      tooltip: {
+        enabled: false,
+      },
     },
   };
 

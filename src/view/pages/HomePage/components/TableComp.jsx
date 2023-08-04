@@ -46,40 +46,22 @@ export default function TableComp() {
                 </span>
               </td>
               <td>
-                <span style={{ color: "#DC1B1B" }}>
-                  192 <br />
-                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
-                </span>
+                <span style={{ color: "#00A939" }}>192</span>
               </td>
               <td>
-                <span style={{ color: "#00A939" }}>
-                  192 <br />
-                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
-                </span>
+                <span style={{ color: "#00A939" }}>192</span>
               </td>
               <td>
-                <span style={{ color: "#DC1B1B" }}>
-                  192 <br />
-                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
-                </span>
+                <span style={{ color: "#00A939" }}>192</span>
               </td>
               <td>
-                <span style={{ color: "#00A939" }}>
-                  192 <br />
-                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
-                </span>
+                <span style={{ color: "#00A939" }}>192</span>
               </td>
               <td>
-                <span style={{ color: "#DC1B1B" }}>
-                  192 <br />
-                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
-                </span>
+                <span style={{ color: "#00A939" }}>192</span>
               </td>
               <td>
-                <span style={{ color: "#00A939" }}>
-                  192 <br />
-                  <span style={{ fontSize: "0.6rem" }}>1.25 (2.3%)</span>
-                </span>
+                <span style={{ color: "#00A939" }}>192</span>
               </td>
             </tr>
           );
