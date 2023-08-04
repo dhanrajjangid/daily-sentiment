@@ -26,10 +26,10 @@ export default function TopCircleChart(props) {
     responsive: true,
     maintainAspectRatio: true,
     defaultFontSize: "14px",
-    cutout: 25,
+    cutout: 50,
     title: {
       display: true,
-      text: "Total Feedback",
+      // text: "Total Feedback",
       fontSize: 30,
     },
 
@@ -39,63 +39,55 @@ export default function TopCircleChart(props) {
     },
   };
 
-  const newText = () => {
-    return (
-      <>
-        <p>newText</p>
-      </>
-    );
-  };
-
-  const drawInnerText = (chart) => {
-    let ctx = chart.ctx;
-    ctx.restore();
-    const fontSize = (chart.height / 114).toFixed(2);
-    ctx.font = fontSize + "em sans-serif";
-    ctx.color = "white";
-
-    ctx.textBaseline = "middle";
-    const dataArrValues = chart.config._config.data.datasets[0].data;
-    let text = "TSLA";
-    let textX = Math.round((chart.width - ctx.measureText(text).width) / 2);
-    let textY = chart.height / 2;
-    ctx.fillText(text, textX, textY);
-    ctx.fillStyle = "#fff";
-    ctx.save();
-  };
-
   return (
-    <>
+    <div
+      className="doughnut-chart "
+      style={{
+        position: "relative",
+        zIndex: 2,
+      }}
+    >
+      <Doughnut data={donutChart} options={options} />
+
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          position: "absolute",
+
+          height: "130px",
+          width: "130px",
+          top: "0%",
+          left: "0%",
+          borderRadius: "50%",
+
+          zIndex: -1,
           backgroundColor: props.item.bgColor,
-          p: 1,
-          borderRadius: "0.2rem",
-          padding: "0.4rem 0.4rem",
         }}
       >
-        <div className="doughnut-chart" style={{ marginBottom: "0.5rem" }}>
-          <Doughnut
-            data={donutChart}
-            options={options}
-            plugins={[
-              {
-                beforeDraw: function (chart) {
-                  drawInnerText(chart);
-                },
-              },
-            ]}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
+            pt: 0.5,
+          }}
+        >
+          <Typography sx={{ fontSize: "0.7rem" }}>SENTIMENT</Typography>
+          <hr
+            style={{
+              width: "60%",
+              margin: 0,
+              height: "0.1rem",
+              border: 0,
+              backgroundColor: "#E21111",
+            }}
           />
-        </div>
 
-        {/* <Typography sx={{ fontSize: "0.8rem" }}>SENTIMENT</Typography> */}
-
-        <Typography>16</Typography>
-        <Typography sx={{ fontSize: "0.9rem" }}>452.68</Typography>
+          <Typography variant="h5">26</Typography>
+          <Typography sx={{ fontSize: "0.7rem" }}>Bearish</Typography>
+        </Box>
       </Box>
-    </>
+    </div>
   );
 }

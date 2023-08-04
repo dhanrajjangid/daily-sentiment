@@ -63,7 +63,7 @@ table td {
 
 .table-component table th {
   text-align: left;
-  background-color: #2e15e4;
+  background-color: #201f7b;
 }
 .table-component table tr:first-child {
   background: transparent;
@@ -115,7 +115,9 @@ table td {
 
 .top-table::-webkit-scrollbar,
 .circle-grid::-webkit-scrollbar,
-.table-component::-webkit-scrollbar {
+.table-component::-webkit-scrollbar,
+.sentiment-circle::-webkit-scrollbar {
+  display: none;
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
@@ -127,7 +129,7 @@ table td {
 }
 
 .top-table table tr {
-  background-color: #3b0495;
+  background-color: #201f7b;
   font-size: 16px;
   height: 20px;
 }
@@ -139,8 +141,21 @@ table td {
 
 /* pie chart */
 .doughnut-chart {
-  height: 70px;
-  width: 70px;
+  height: 130px;
+  width: 130px;
+}
+
+.centerme {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.sentiment-circle {
+  /* overflow-y: hidden; */
+  /* overflow-x: auto; */
 }
 
 /* apex chart daily commulative */

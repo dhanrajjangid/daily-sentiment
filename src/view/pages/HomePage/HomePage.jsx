@@ -1,204 +1,89 @@
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Container,
-  Box,
-  Typography,
-  Grid,
-  Paper,
-  CardActions,
-  Button,
-  Divider,
-} from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import { Typography, TextField } from "@mui/material";
+import Box from "@mui/material/Box";
 import "./Styles/index.css";
-import HeatMap from "./components/HeatMap";
-import SearchCard from "./components/SearchCard";
-import DailyComu from "./components/DailyComu";
-import MiniCards from "./components/MiniCards";
-import TableComp from "./components/TableComp";
-import TopTable from "./components/TopTable";
-import BuzzingChart from "./components/BuzzingChart";
-import SentimentCard from "./components/SentimentCard";
-import HorizontalChart from "./components/HorizontalChart";
-import axios from "axios";
-import MiniCardsBearish from "./components/MiniCardsBearish";
+import "./Styles/homePage.css";
+import { TabPanel, TabContext, TabList } from "@mui/lab";
+import DailySentiment from "./DailySentiment";
+import SP500 from "../SP500/SP500";
 
-const Home = () => {
-  // const latestListing = async (params) => {
-  //   axios
-  //     .get("http://127.0.0.1:5000/daily-hot-list")
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.warn(err);
-  //     });
-  // };
+export default function Home() {
+  const [value, setValue] = useState("0");
+  const [inputClass, setInputClass] = useState("selected-search");
+  const [searchValue, setSearchValue] = useState("");
 
-  // useEffect(() => {
-  //   latestListing();
-  // }, []);
+  useEffect(() => {
+    if (value !== "0") {
+      setInputClass("unselected-search");
+    } else if (value === "0") {
+      setInputClass("selected-search");
+    }
+  }, [value]);
+  const handleSearchClick = () => {
+    setValue("0");
+  };
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleSearchValue = (e) => {
+    setSearchValue(e.target.value);
+  };
 
   return (
     <Box className="home-box">
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          mb: 0,
-          px: window.innerWidth < 480 ? 1 : 0,
-        }}
-      >
-        <Typography variant="h6">DAILY SENTIMENT</Typography>
-      </Grid>
-      {/* first row */}
-      <Box sx={{ flexGrow: 1, mb: 1 }}>
-        <Grid container spacing={0.5}>
-          <Grid item md={2.8} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: 190 }}>
-              <Typography>Daily Sentiment Heat Map</Typography>
-
-              <HeatMap />
-            </Paper>
-          </Grid>
-          <Grid item md={3} xs={12}>
-            <Paper
-              className="paper-back"
-              sx={{
-                px: 1,
-                py: 1,
-                height: 190,
-              }}
-            >
-              <SearchCard />
-            </Paper>
-          </Grid>
-
-          {/* daily commulative chart */}
-          <Grid item md={3.1} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: 190 }}>
-              <Grid
-                item
-                sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Typography>DAILY CUMULATIVE 5 MIN</Typography>
-                <Grid item>
-                  <DailyComu />
-                </Grid>
-              </Grid>
-            </Paper>
-          </Grid>
-
-          {/* top buzzing chart */}
-          <Grid item md={3.1} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: 190 }}>
-              <Grid
-                item
-                sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Typography>TOP BUZZING STOCKS</Typography>
-                <Grid item sx={{ height: "90%" }}>
-                  <BuzzingChart />
-                </Grid>
-              </Grid>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Box>
-
-      {/* second row */}
-      <Box sx={{ flexGrow: 1, mb: 1 }}>
-        <Grid container spacing={1}>
-          {/* first item - column */}
-          <Grid
-            container
-            item
-            md={2.8}
-            xs={12}
-            spacing={1}
-            sx={{ display: "flex", alignItems: "center" }}
-          >
-            <Grid item md={12} xs={12} sx={{ height: "40%" }}>
-              <MiniCards />
-            </Grid>
-            <Grid item md={12} xs={12} sx={{ height: "40%" }}>
-              <MiniCardsBearish />
-            </Grid>
-          </Grid>
-
-          {/* second item - column */}
-          <Grid item md={3} xs={12}>
-            <Paper className="paper-back" sx={{ p: 0, height: 155 }}>
-              <HorizontalChart />
-            </Paper>
-          </Grid>
-          {/* third item - column */}
-
-          <Grid
-            item
-            md={6.2}
-            xs={12}
-            sx={{
-              height: 160,
+      <TabContext value={value}>
+        <Box className="header-tabs">
+          <input
+            className={`header-search ${inputClass}`}
+            type="text"
+            placeholder="Search here..."
+            onChange={handleSearchValue}
+            onClick={handleSearchClick}
+            value={searchValue}
+            style={{
+              height: "40px",
+              backgroundColor: "purple",
+              borderRadius: "20px",
+              padding: "0 20px",
+              border: "none",
+              outline: "none",
+              color: "white",
             }}
+          />
+          <TabList
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
           >
-            <Grid
-              item
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: "1rem",
-                p: 0.1,
-                px: 1,
-                borderRadius: "0.5rem",
-                border: "2px solid #250061",
-                height: "100%",
-              }}
-            >
-              <SentimentCard />
-            </Grid>
-          </Grid>
-        </Grid>
-      </Box>
-
-      {/* third row */}
-
-      <Box sx={{ flexGrow: 1, mb: 1 }}>
-        <Grid container item spacing={0.5}>
-          {/* first item */}
-          <Grid item md={5.8} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: 220 }}>
-              <Typography sx={{ fontSize: "0.8rem" }}>
-                TOP MENTIOINS STOCK - WALLSTREET BET
-              </Typography>
-
-              <TopTable />
-            </Paper>
-          </Grid>
-          {/* second item */}
-
-          <Grid item md={6.2} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: 220 }}>
-              <TableComp />
-            </Paper>
-          </Grid>
-        </Grid>
-      </Box>
+            <Tab
+              sx={{ backgroundColor: "white", borderRadius: " 20px 0 0 20px" }}
+              label="S&P500"
+              value="1"
+            />
+            <Tab sx={{ backgroundColor: "white" }} label="TOP10" value="2" />
+            <Tab
+              sx={{ backgroundColor: "white", borderRadius: "0 20px 20px 0" }}
+              label="ETF"
+              value="3"
+            />
+          </TabList>
+        </Box>
+        <Box className="home-tabpanel">
+          <TabPanel value="0">
+            <DailySentiment />
+          </TabPanel>
+          <TabPanel value="1">
+            <SP500 />
+          </TabPanel>
+          <TabPanel value="2">Item Two</TabPanel>
+          <TabPanel value="3">Item Three</TabPanel>
+        </Box>
+      </TabContext>
     </Box>
   );
-};
-
-export default Home;
+}

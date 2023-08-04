@@ -26,7 +26,7 @@ export default function CircleChart(props) {
     responsive: true,
     maintainAspectRatio: true,
     defaultFontSize: "14px",
-    cutout: 25,
+    cutout: 50,
     title: {
       display: true,
       // text: "Total Feedback",
@@ -56,7 +56,7 @@ export default function CircleChart(props) {
 
     ctx.textBaseline = "middle";
     const dataArrValues = chart.config._config.data.datasets[0].data;
-    let text = "TSLA";
+    let text = "";
     let textX = Math.round((chart.width - ctx.measureText(text).width) / 2);
     let textY = chart.height / 2;
     ctx.fillText(text, textX, textY);
@@ -65,43 +65,63 @@ export default function CircleChart(props) {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+    <div
+      className="doughnut-chart "
+      style={{
+        position: "relative",
       }}
     >
-      <div className="doughnut-chart" style={{ marginBottom: "0.2rem" }}>
-        <Doughnut
-          data={donutChart}
-          options={options}
-          plugins={[
-            {
-              beforeDraw: function (chart) {
-                drawInnerText(chart);
-              },
+      <Doughnut
+        data={donutChart}
+        options={options}
+        plugins={[
+          {
+            beforeDraw: function (chart) {
+              drawInnerText(chart);
             },
-          ]}
-        />
-      </div>
+          },
+        ]}
+      />
+
       <Box
         sx={{
-          display: "flex",
-          width: "90%",
-          flexDirection: "column",
-          alignItems: "center",
+          position: "absolute",
+
+          height: "130px",
+          width: "130px",
+          top: "0%",
+          left: "0%",
+          borderRadius: "50%",
+
+          zIndex: -1,
           backgroundColor: props.item.bgColor,
-          p: 1,
-          borderRadius: " 0 0 0.2rem 0.2rem",
-          padding: "0.1rem 0.3rem",
         }}
       >
-        {/* <Typography sx={{ fontSize: "0.8rem" }}>SENTIMENT</Typography> */}
-
-        <Typography>16</Typography>
-        <Typography sx={{ fontSize: "0.7rem" }}>452.68(0.55%)</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
+            pt: 0.5,
+          }}
+        >
+          <Typography sx={{ fontSize: "0.7rem" }}>SENTIMENT</Typography>
+          <hr
+            style={{
+              width: "60%",
+              margin: 0,
+              height: "0.1rem",
+              border: 0,
+              backgroundColor: props.item.circleColour,
+            }}
+          />
+          <Typography>TSLA</Typography>
+          <Typography sx={{ fontSize: "0.7rem" }}>452.68</Typography>
+          <Typography>26</Typography>
+        </Box>
       </Box>
-    </Box>
+    </div>
   );
 }

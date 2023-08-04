@@ -1,0 +1,54 @@
+.header-tabs {
+  border-radius: 20px;
+  background-color: white;
+  padding: 0 0 0 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1;
+  border-color: divider;
+  height: 40px;
+  background-color: white;
+}
+
+.header-tabs .MuiTabs-root {
+  min-height: 40px;
+}
+
+.header-tabs button,
+.header-tabs button span {
+  min-height: 40px;
+}
+.header-tabs button {
+  padding: 2px 16px;
+}
+
+.home-tabpanel .MuiTabPanel-root {
+  padding: 5px !important;
+}
+
+.header-tabs .Mui-selected {
+  background-color: #851083;
+  color: white !important;
+  border-radius: 20px;
+  padding: 0;
+}
+.header-tabs .MuiTabs-indicator {
+  display: none;
+}
+
+.header-tabs input::placeholder {
+  color: white;
+  font-size: 1rem;
+}
+.header-tabs .selected-search {
+  background-color: 851083 !important;
+  border-right: 1px solid black;
+}
+
+.header-tabs .unselected-search {
+  background-color: white !important;
+  border-right: 1px solid black;
+}
+.header-tabs .unselected-search::placeholder {
+  color: grey;
+}

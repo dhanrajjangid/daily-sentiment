@@ -40,7 +40,7 @@ export default function HorizontalChart() {
     grid: {
       xaxis: {
         lines: {
-          show: true,
+          show: false,
         },
       },
       yaxis: {

@@ -25,35 +25,10 @@ const dataArr = [
 const SentimentCard = () => {
   return (
     <>
-      <Grid
-        className="circle-grid"
-        container
-        spacing={1}
-        wrap="nowrap"
-        sx={{ display: "flex", overflowX: "auto" }}
-      >
-        {dataArr.map((item) => {
-          console.log(item, "item");
-          return (
-            <Grid item md={4}>
-              <CircleChart item={item} />
-            </Grid>
-          );
-        })}
-
-        {/* </Grid>
-      <Grid item md={2}>
-        <CircleChart />
-      </Grid>
-      <Grid item md={2}>
-        <CircleChart />
-      </Grid>
-      <Grid item md={2}>
-        <CircleChart />
-      </Grid>
-      <Grid item md={2}>
-        <CircleChart /> */}
-      </Grid>
+      {dataArr.map((item) => {
+        console.log(item, "item");
+        return <CircleChart item={item} />;
+      })}
     </>
   );
 };

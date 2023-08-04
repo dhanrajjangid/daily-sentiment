@@ -36,7 +36,7 @@ export default function MiniCardsBearish() {
           alignItems: "center",
         }}
       >
-        <Typography sx={{ fontSize: "1rem" }}> SPY</Typography>
+        <Typography sx={{ fontSize: "1rem" }}> QQQ</Typography>
         <Typography sx={{ fontSize: "0.6rem" }}> 452.68(0.55%)</Typography>
       </Grid>
       <Grid

@@ -20,7 +20,7 @@ import LineChart from "./components/LineChart";
 const SP500 = () => {
   const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
-    <Box className="home-box" sx={{ mt: 2 }}>
+    <Box sx={{ mt: 2 }}>
       {/* heading */}
       <Grid
         container
