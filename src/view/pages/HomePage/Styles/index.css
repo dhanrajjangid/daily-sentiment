@@ -53,7 +53,7 @@ table td {
 }
 
 .table-component table tr {
-  background-color: #00327c;
+  background-color: #0c263f;
   height: 20px;
 }
 
@@ -63,7 +63,7 @@ table td {
 
 .table-component table th {
   text-align: left;
-  background-color: #201f7b;
+  background-color: #2d3d4d;
 }
 .table-component table tr:first-child {
   background: transparent;
@@ -84,11 +84,11 @@ table td {
 
 .table-component td:first-child {
   border-radius: 650px 0 0 650px;
-  background-color: #201f7b;
+  background-color: #2d3d4d;
 }
 .table-component td:nth-child(2),
 .table-component td:nth-child(3) {
-  background-color: #201f7b;
+  background-color: #2d3d4d;
 }
 .table-component td:last-child {
   border-radius: 0 10px 10px 0;
@@ -129,7 +129,7 @@ table td {
 }
 
 .top-table table tr {
-  background-color: #201f7b;
+  background-color: #2d3d4d;
   font-size: 16px;
   height: 20px;
 }

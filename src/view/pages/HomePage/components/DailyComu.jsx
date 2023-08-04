@@ -126,7 +126,7 @@ function DailyComu() {
     legend: {
       position: "top",
       offsetY: 10,
-      offsetX: 30,
+      offsetX: 0,
     },
   };
 

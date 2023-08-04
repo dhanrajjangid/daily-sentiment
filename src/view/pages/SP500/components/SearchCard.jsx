@@ -47,6 +47,7 @@ const SearchCard = () => {
             alt=""
           />
           <Typography>TSLA - $265.12</Typography>
+          <Typography sx={{ fontSize: "0.9rem" }}>5.2(2.03%)</Typography>
         </Grid>
 
         <Grid
@@ -54,7 +55,7 @@ const SearchCard = () => {
           md={12}
           xs={12}
           sm={6}
-          sx={{ height: "150px", overflow: "hidden" }}
+          sx={{ display: "flex", justifyContent: "center", height: "60%" }}
         >
           <TopCircleChart item={dataObj} />
         </Grid>

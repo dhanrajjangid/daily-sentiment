@@ -59,7 +59,7 @@ const DailySentiment = () => {
         <Grid container spacing={0.5}>
           <Grid item md={2.8} xs={12}>
             <Paper className="paper-back" sx={{ p: 1, height: 190 }}>
-              <Typography>Daily Sentiment Heat Map</Typography>
+              <Typography>DAILY SENTIMENT HEAT MAP</Typography>
 
               <HeatMap />
             </Paper>
@@ -153,7 +153,7 @@ const DailySentiment = () => {
               sx={{
                 height: 135,
                 width: "100%",
-                border: "2px solid #250061",
+                border: "2px solid #101F2C",
                 display: "flex",
                 p: 1,
                 overflowX: "scroll",

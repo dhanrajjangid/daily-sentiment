@@ -80,7 +80,7 @@ export default function HorizontalChart() {
     legend: {
       position: "top",
       offsetY: 2,
-      offsetX: 100,
+      offsetX: 30,
     },
   };
 

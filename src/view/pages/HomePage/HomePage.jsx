@@ -47,7 +47,7 @@ export default function Home() {
             value={searchValue}
             style={{
               height: "40px",
-              backgroundColor: "purple",
+              backgroundColor: "#2B3C4C",
               borderRadius: "20px",
               padding: "0 20px",
               border: "none",
