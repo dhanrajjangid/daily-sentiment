@@ -22,7 +22,7 @@ export default function TopTable() {
           <tr>
             <th>Symbol</th>
             <th>Price</th>
-            <th>Total Mention</th>
+            <th>Mention</th>
             <th>Sentiment</th>
             <th>Rank</th>
           </tr>

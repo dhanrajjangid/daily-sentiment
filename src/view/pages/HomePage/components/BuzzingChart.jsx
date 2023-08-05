@@ -31,15 +31,29 @@ function BuzzingChart() {
         },
       },
     },
+    dataLabels: {
+      enabled: false,
+      style: {
+        fontSize: "0.5rem",
+        fontWeight: "bold",
+      },
+      offsetY: -5,
+    },
     plotOptions: {
       bar: {
+        // dataLabels: {
+        //   show: "false",
+        // position: "top",
+        // },
+
         borderRadius: 4,
         horizontal: false,
       },
+      dataLabels: {
+        enabled: false,
+      },
     },
-    dataLabels: {
-      enabled: false,
-    },
+
     xaxis: {
       categories: [
         "APPL",

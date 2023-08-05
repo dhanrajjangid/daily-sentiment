@@ -106,11 +106,17 @@ function DailyComu() {
         "02:50",
         "03:00",
       ],
-      tickAmount: 10,
+      tickAmount: 8,
       labels: {
         hideOverlappingLabels: true,
       },
+      labels: {
+        style: {
+          fontSize: "0.65rem",
+        },
+      },
     },
+
     dataLabels: {
       enabled: false,
     },

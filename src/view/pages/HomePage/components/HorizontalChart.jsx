@@ -72,9 +72,14 @@ export default function HorizontalChart() {
       //     text: "Percent",
       //   },
       labels: {
+        show: true,
+        align: "middle",
         formatter: function (val) {
           return Math.abs(Math.round(val));
         },
+      },
+      axisBorder: {
+        show: false,
       },
     },
     legend: {

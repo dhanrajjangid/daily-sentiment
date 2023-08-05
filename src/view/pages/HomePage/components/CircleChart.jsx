@@ -26,7 +26,7 @@ export default function CircleChart(props) {
     responsive: true,
     maintainAspectRatio: true,
     defaultFontSize: "14px",
-    cutout: 40,
+    cutout: 39,
 
     plugins: {
       legend: false,
@@ -97,8 +97,8 @@ export default function CircleChart(props) {
             sx={{
               position: "absolute",
 
-              height: "100px",
-              width: "100px",
+              height: "99px",
+              width: "99px",
               top: "0%",
               left: "0%",
               borderRadius: "50%",

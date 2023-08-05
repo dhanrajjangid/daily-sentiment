@@ -24,13 +24,25 @@ table td,
   padding: 0 0;
 }
 
-#customers th {
-  /* width: 1%; */
-  font-size: 0.7rem;
-}
-
 table td {
   font-size: 0.8rem;
+}
+
+.table-component {
+  overflow-y: auto;
+  height: 100%;
+}
+
+table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+table tr th {
+  font-size: 0.73rem;
+  padding: 0;
+  background-color: #141b1e;
 }
 
 /* table component (first table) */
@@ -48,7 +60,7 @@ table td {
   max-width: 30px;
 }
 .table-component table tr:first-child {
-  height: 20px;
+  height: 30px;
 }
 
 .table-component table tr {
@@ -58,20 +70,15 @@ table td {
 
 .table-component table tr td:first-child {
   padding-left: 0;
+  max-width: 40px;
 }
 
 .table-component table th {
   text-align: left;
   background-color: #2d3d4d;
 }
-.table-component table tr:first-child {
-  background: transparent;
-}
-.table-component table tr:first-child th:first-child {
-  background: transparent;
-}
 
-.table-component table tr:first-child th:nth-child(2) {
+.table-component table tr:first-child th:first-child {
   border-radius: 650px 0 0 650px;
 }
 
@@ -82,6 +89,8 @@ table td {
 .table-component td:first-child {
   border-radius: 650px 0 0 650px;
   background-color: #2d3d4d;
+
+  /* max-width: 50px; */
 }
 .table-component td:nth-child(2) {
   background-color: #2d3d4d;
@@ -92,7 +101,12 @@ table td {
 
 /* top table */
 .top-table {
-  overflow: auto;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.top-table th {
+  padding: 8px 10px !important;
 }
 
 .top-table td:first-child {
@@ -103,11 +117,11 @@ table td {
   border-radius: 0 5px 5px 0;
 }
 
-.top-table th,
+/* .top-table th,
 .top-table td {
   white-space: nowrap;
   max-width: 100px;
-}
+} */
 
 .top-table::-webkit-scrollbar,
 .circle-grid::-webkit-scrollbar,
@@ -129,7 +143,7 @@ table td {
 .top-table table thead tr {
   vertical-align: bottom;
   height: 20px;
-  background: transparent;
+  background-color: #141b1e;
 }
 
 .top-table table tr {
@@ -137,16 +151,11 @@ table td {
   font-size: 16px;
   height: 20px;
 }
-.top-table table tr th {
-  font-weight: 300;
-  font-size: 0.8rem;
-  padding: 0;
-}
 
 /* pie chart */
 .doughnut-chart {
-  height: 100px;
-  width: 100px;
+  height: 99px;
+  width: 99px;
 }
 .doughnut-chart-top {
   height: 115px;

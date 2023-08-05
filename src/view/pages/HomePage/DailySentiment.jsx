@@ -48,7 +48,7 @@ const DailySentiment = () => {
         <Grid container spacing={0.5}>
           <Grid item md={2.8} xs={12}>
             <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
-              <Typography>DAILY SENTIMENT HEAT MAP</Typography>
+              <Typography>Daily Sentiment Heat Map</Typography>
 
               <HeatMap />
             </Paper>
@@ -78,7 +78,7 @@ const DailySentiment = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <Typography>DAILY CUMULATIVE 5 MIN</Typography>
+                <Typography>Daily Cumulative 5 Min</Typography>
                 <Grid item>
                   <DailyComu />
                 </Grid>
@@ -98,7 +98,7 @@ const DailySentiment = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <Typography>TOP BUZZING STOCKS</Typography>
+                <Typography>Top Buzzing Stocks</Typography>
                 <Grid item sx={{ height: "90%" }}>
                   <BuzzingChart />
                 </Grid>
@@ -139,11 +139,11 @@ const DailySentiment = () => {
             <Box
               className="sentiment-circle"
               sx={{
-                height: "22.5vh",
+                height: "23.5vh",
                 width: "100%",
                 border: "2px solid #101F2C",
                 display: "flex",
-                p: 1,
+                p: 0.5,
                 overflowX: "scroll",
                 borderRadius: "0.6rem",
               }}
@@ -165,9 +165,7 @@ const DailySentiment = () => {
           {/* first item */}
           <Grid item md={5.8} xs={12}>
             <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
-              <Typography sx={{ fontSize: "0.8rem" }}>
-                TOP MENTIOINS STOCK - WALLSTREET BET
-              </Typography>
+              <Typography>Top Mentions Stock - Wallstreet Bet</Typography>
 
               <TopTable />
             </Paper>
