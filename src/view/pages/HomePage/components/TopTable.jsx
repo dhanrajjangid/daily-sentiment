@@ -20,11 +20,11 @@ export default function TopTable() {
       <table style={{ height: "100%", width: "100%" }}>
         <thead>
           <tr>
-            <th>Stock Name</th>
-            <th>Today Price</th>
+            <th>Symbol</th>
+            <th>Price</th>
             <th>Total Mention</th>
             <th>Sentiment</th>
-            <th>Sentiment Rank</th>
+            <th>Rank</th>
           </tr>
         </thead>
         <tbody>

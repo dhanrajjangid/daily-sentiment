@@ -13,16 +13,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 export default function Home() {
   const [value, setValue] = useState("0");
-  const [inputClass, setInputClass] = useState("selected-search");
-  const [searchValue, setSearchValue] = useState("");
 
-  useEffect(() => {
-    if (value !== "0") {
-      setInputClass("unselected-search");
-    } else if (value === "0") {
-      setInputClass("selected-search");
-    }
-  }, [value]);
   const handleSearchClick = () => {
     setValue("0");
   };
@@ -39,32 +30,13 @@ export default function Home() {
     <Box className="home-box">
       <TabContext value={value}>
         <Box className="header-tabs">
-          <Box className="search-bar-header" sx={{ position: "relative" }}>
-            <input
-              className={`header-search ${inputClass}`}
-              type="text"
-              placeholder="Search here..."
-              onChange={handleSearchValue}
-              onClick={handleSearchClick}
-              value={searchValue}
-              style={{
-                fontSize: "1rem",
-                height: "40px",
-                backgroundColor: "white",
-                borderRadius: "20px",
-                padding: " 0px 20px 0px 50px ",
-                border: "none",
-                outline: "none",
-                color: "white",
-              }}
-            />
-            <SearchIcon sx={{ position: "absolute", left: "5%", top: "20%" }} />
-          </Box>
           <TabList
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
           >
+            <Tab className="tab-pills" label="Daily Sentiment" value="0" />
+
             <Tab className="tab-pills" label="S&P500" value="1" />
             <Tab className="tab-pills" label="DJIA" value="2" />
             <Tab className="tab-pills" label="NASDAQ" value="3" />

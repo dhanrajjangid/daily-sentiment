@@ -1,7 +1,7 @@
 @media only screen and (min-width: 600px) {
   .home-box {
     padding: 0;
-    height: calc(100vh - 50px);
+    max-height: 100vh;
     width: calc(100% - 230px);
     margin-left: 230px;
   }
@@ -45,8 +45,7 @@ table td {
 
 .table-component th,
 .table-component td {
-  white-space: nowrap;
-  max-width: 42px;
+  max-width: 30px;
 }
 .table-component table tr:first-child {
   height: 20px;
@@ -71,10 +70,8 @@ table td {
 .table-component table tr:first-child th:first-child {
   background: transparent;
 }
+
 .table-component table tr:first-child th:nth-child(2) {
-  background: transparent;
-}
-.table-component table tr:first-child th:nth-child(3) {
   border-radius: 650px 0 0 650px;
 }
 
@@ -86,8 +83,7 @@ table td {
   border-radius: 650px 0 0 650px;
   background-color: #2d3d4d;
 }
-.table-component td:nth-child(2),
-.table-component td:nth-child(3) {
+.table-component td:nth-child(2) {
   background-color: #2d3d4d;
 }
 .table-component td:last-child {

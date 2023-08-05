@@ -1,4 +1,5 @@
 .header-tabs {
+  margin-top: 25px;
   border-radius: 20px;
   background-color: transparent;
   padding: 0 0 0 0;
@@ -7,7 +8,8 @@
   gap: 20px;
   border-bottom: 1;
   border-color: divider;
-  height: 40px;
+  /* height: 40px; */
+  max-height: 4vh;
 }
 .header-tabs .tab-pills {
   margin-right: 20px;
@@ -15,18 +17,19 @@
   border: 2px solid white;
   color: white;
   border-radius: 20px;
+  min-height: 35px;
 }
 
 .header-tabs .MuiTabs-root {
-  min-height: 40px;
+  height: 4vh;
 }
 
 .header-tabs button,
 .header-tabs button span {
-  min-height: 40px;
+  height: 4vh;
 }
 .header-tabs button {
-  padding: 2px 16px;
+  padding: 1px 16px;
 }
 
 .home-tabpanel .MuiTabPanel-root {
@@ -37,38 +40,8 @@
   background-color: white;
   color: black !important;
   border-radius: 20px;
-  padding: 0;
+  height: 5vh !important;
 }
 .header-tabs .MuiTabs-indicator {
   display: none;
-}
-
-.header-tabs input::placeholder {
-  color: white;
-  font-size: 1rem;
-  padding-left: 10%;
-}
-.header-tabs input {
-  padding-left: 20%;
-}
-.header-tabs .selected-search {
-  background-color: #white !important;
-  color: black !important;
-}
-
-.header-tabs .unselected-search {
-  background-color: transparent !important;
-  border: 2px solid white !important;
-}
-
-.header-tabs .selected-search::placeholder {
-  color: black;
-}
-
-.header-tabs .unselected-search::placeholder {
-  color: grey;
-}
-
-.search-bar-header svg {
-  fill: black;
 }

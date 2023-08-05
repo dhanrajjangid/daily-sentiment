@@ -19,8 +19,7 @@ export default function TableComp() {
       <table id="customers">
         <tr>
           <th></th>
-          <th></th>
-          <th>Today</th>
+          <th>Price</th>
           <th>1 Day Ago</th>
           <th>2 Day Ago</th>
           <th>Last Week</th>
@@ -32,13 +31,15 @@ export default function TableComp() {
           return (
             <tr className="table-data-row">
               <td>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="/static/images/avatar/1.jpg"
-                  sx={{ width: 35, height: 35 }}
-                />
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="/static/images/avatar/1.jpg"
+                    sx={{ width: 35, height: 35 }}
+                  />
+                  <span>AAPL</span>
+                </Box>
               </td>
-              <td>AAPL</td>
               <td>
                 <span style={{ color: "#00A939" }}>
                   192 <br />
