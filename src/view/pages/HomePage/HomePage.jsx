@@ -43,7 +43,7 @@ export default function Home() {
           </TabList>
         </Box>
         <Box className="home-tabpanel">
-          <TabPanel value="0">
+          <TabPanel value="0" sx={{ height: "100%" }}>
             <DailySentiment />
           </TabPanel>
           <TabPanel value="1">

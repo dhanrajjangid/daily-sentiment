@@ -47,7 +47,7 @@ const DailySentiment = () => {
       <Box sx={{ mb: 1 }}>
         <Grid container spacing={0.5}>
           <Grid item md={2.8} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: "28%" }}>
+            <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
               <Typography>DAILY SENTIMENT HEAT MAP</Typography>
 
               <HeatMap />
@@ -59,7 +59,7 @@ const DailySentiment = () => {
               sx={{
                 px: 1,
                 py: 1,
-                height: "28%",
+                height: "28vh",
               }}
             >
               <SearchCard />
@@ -68,7 +68,7 @@ const DailySentiment = () => {
 
           {/* daily commulative chart */}
           <Grid item md={3.1} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: "28%" }}>
+            <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
               <Grid
                 item
                 sx={{
@@ -88,7 +88,7 @@ const DailySentiment = () => {
 
           {/* top buzzing chart */}
           <Grid item md={3.1} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: "28%" }}>
+            <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
               <Grid
                 item
                 sx={{
@@ -117,7 +117,7 @@ const DailySentiment = () => {
             md={2.8}
             xs={12}
             spacing={1}
-            sx={{ display: "flex", alignItems: "center", height: "27%" }}
+            sx={{ display: "flex", alignItems: "center", height: "26vh" }}
           >
             <Grid item md={12} xs={12} sx={{ height: "40%" }}>
               <MiniCards />
@@ -129,17 +129,17 @@ const DailySentiment = () => {
 
           {/* second item - column */}
           <Grid item md={3} xs={12}>
-            <Paper className="paper-back" sx={{ p: 0, height: "26%" }}>
+            <Paper className="paper-back" sx={{ p: 0, height: "25vh" }}>
               <HorizontalChart />
             </Paper>
           </Grid>
           {/* third item - column */}
 
-          <Grid container item md={6.2} xs={12} sx={{}}>
+          <Grid container item md={6.2} xs={12}>
             <Box
               className="sentiment-circle"
               sx={{
-                height: "23.5%",
+                height: "22.5vh",
                 width: "100%",
                 border: "2px solid #101F2C",
                 display: "flex",
@@ -164,7 +164,7 @@ const DailySentiment = () => {
         <Grid container item spacing={0.5}>
           {/* first item */}
           <Grid item md={5.8} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: "30vh" }}>
+            <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
               <Typography sx={{ fontSize: "0.8rem" }}>
                 TOP MENTIOINS STOCK - WALLSTREET BET
               </Typography>
@@ -175,7 +175,7 @@ const DailySentiment = () => {
           {/* second item */}
 
           <Grid item md={6.2} xs={12}>
-            <Paper className="paper-back" sx={{ p: 1, height: "30vh" }}>
+            <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
               <TableComp />
             </Paper>
           </Grid>
