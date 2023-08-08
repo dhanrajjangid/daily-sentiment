@@ -75,49 +75,57 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function FixedSpacing() {
+export default function FixedSpacing(props) {
+  console.log(props.sentimentData, "props data");
   return (
     <Box sx={{ width: "100%" }}>
       <Masonry columns={4} spacing={0.5}>
-        {heights.map((item, index) => {
-          let heights = item.height;
-          return (
-            <Item
-              key={index}
-              sx={{ height: heights, backgroundColor: item.bgColor }}
-            >
-              <Box
-                sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Box
-                  sx={{
-                    backgroundColor: "white",
-                    borderRadius: "50%",
-                    width: "30px",
-                    height: "30px",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+        {props.sentimentData.length > 0 &&
+          props.sentimentData.map((item, index) => {
+            while (index < 8) {
+              // let heights = item.height;
+              return (
+                <Item
+                  key={index}
+                  sx={{ height: 80, backgroundColor: "#006D33" }}
                 >
-                  <img
-                    style={{ height: "15px", width: "15px" }}
-                    src={item.image}
-                    alt=""
-                  />
-                </Box>
-                <Typography sx={{ fontSize: "0.8rem" }}>MSFT</Typography>
-                <Typography sx={{ fontSize: "0.8rem" }}>20</Typography>
-              </Box>
-            </Item>
-          );
-        })}
+                  <Box
+                    sx={{
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        backgroundColor: "white",
+                        borderRadius: "50%",
+                        width: "30px",
+                        height: "30px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        style={{ height: "15px", width: "15px" }}
+                        // src={}
+                        alt="L"
+                      />
+                    </Box>
+                    <Typography sx={{ fontSize: "0.8rem" }}>
+                      {item.Symbol}
+                    </Typography>
+                    <Typography sx={{ fontSize: "0.8rem" }}>
+                      {item.sentiment_today}
+                    </Typography>
+                  </Box>
+                </Item>
+              );
+            }
+          })}
       </Masonry>
     </Box>
   );

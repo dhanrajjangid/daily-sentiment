@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   Card,
   CardMedia,
@@ -11,7 +12,7 @@ import {
   Button,
   Divider,
 } from "@mui/material";
-import React, { useEffect } from "react";
+
 import "./Styles/index.css";
 import HeatMap from "./components/HeatMap";
 import SearchCard from "./components/SearchCard";
@@ -24,33 +25,40 @@ import SentimentCard from "./components/SentimentCard";
 import HorizontalChart from "./components/HorizontalChart";
 import axios from "axios";
 import MiniCardsBearish from "./components/MiniCardsBearish";
-
+import { useSelector, useDispatch } from "react-redux";
+import { useCoinActions } from "../../../_actions";
+import { getSentiment } from "./dailySentimentSlice";
 const DailySentiment = () => {
-  // const latestListing = async (params) => {
-  //   axios
-  //     .get("http://127.0.0.1:5000/daily-hot-list")
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.warn(err);
-  //     });
-  // };
+  const sentimentData = useSelector((state) => state.sentiment.value);
+  const coinActions = useCoinActions();
+  const dispatch = useDispatch();
+  const [] = useState({});
 
-  // useEffect(() => {
-  //   latestListing();
-  // }, []);
+  console.log(sentimentData, "111111");
+
+  useEffect(() => {
+    coinActions.predictionListing();
+  }, []);
 
   return (
     <>
       {/* first row */}
+
       <Box sx={{ mb: 1 }}>
+        <Button
+          style={{ zIndex: 4 }}
+          onClick={() => {
+            dispatch(changeColor("red"));
+          }}
+        >
+          asdfasdfasfadsf
+        </Button>
         <Grid container spacing={0.5}>
           <Grid item md={2.8} xs={12}>
             <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
               <Typography>Daily Sentiment Heat Map</Typography>
 
-              <HeatMap />
+              <HeatMap sentimentData={sentimentData} />
             </Paper>
           </Grid>
           <Grid item md={3} xs={12}>
