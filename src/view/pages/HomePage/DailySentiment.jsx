@@ -45,14 +45,6 @@ const DailySentiment = () => {
       {/* first row */}
 
       <Box sx={{ mb: 1 }}>
-        <Button
-          style={{ zIndex: 4 }}
-          onClick={() => {
-            dispatch(changeColor("red"));
-          }}
-        >
-          asdfasdfasfadsf
-        </Button>
         <Grid container spacing={0.5}>
           <Grid item md={2.8} xs={12}>
             <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
