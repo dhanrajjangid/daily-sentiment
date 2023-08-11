@@ -9,7 +9,12 @@ import {
 import React from "react";
 import TopCircleChart from "./TopCircleChart";
 
-const SearchCard = () => {
+const SearchCard = (props) => {
+  const topSearchData = props.searchData;
+  const priceChange = props.searchData.price?.price_change?.toFixed(2);
+  const percentChange = props.searchData.price?.price_change_percentage;
+
+  console.log(topSearchData, 10101010);
   const dataObj =
     // { circleColour: "#00DE4C", bgColor: "#004B19" };
     { circleColour: "#DE0000", bgColor: "#4B0000" };
@@ -47,14 +52,28 @@ const SearchCard = () => {
             alt=""
           />
 
-          <Typography variant="h6">TSLA</Typography>
+          <Typography variant="h6">{topSearchData?.price?.Symbol}</Typography>
 
-          <Typography sx={{ fontSize: "0.8rem" }}>$265.12</Typography>
-          <Typography sx={{ fontSize: "0.8rem" }}>1.22(0.55%)</Typography>
+          <Typography sx={{ fontSize: "0.8rem" }}>
+            {/* ${topSearchData?.price?.price} */}${props.price}
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "0.8rem",
+              color:
+                priceChange > 0
+                  ? "#00DE4C"
+                  : priceChange < 0
+                  ? "#DE0000"
+                  : "#FFE70F",
+            }}
+          >
+            {`${priceChange} (${percentChange} )`}
+          </Typography>
         </Grid>
 
         <Grid item md={6} xs={6} sm={6} sx={{ height: "60%" }}>
-          <TopCircleChart item={dataObj} />
+          <TopCircleChart item={dataObj} topSearchData={topSearchData} />
         </Grid>
       </Grid>
     </Grid>

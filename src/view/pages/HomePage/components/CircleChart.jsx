@@ -9,13 +9,27 @@ import { Doughnut } from "react-chartjs-2";
 import { NoEncryption } from "@mui/icons-material";
 
 export default function CircleChart(props) {
+  const sentiment = parseFloat(props.item?.sentiment_today?.replace("%", ""));
+  const percentChange = parseFloat(
+    props.item?.price_change_percentage.replace("%", "")
+  );
+  const status =
+    sentiment > 0 ? "Bullish" : sentiment < 0 ? "Bearish" : "Neutral";
+
   const donutChart = {
     labels: ["1 star", "2 star"],
     datasets: [
       {
-        data: [10, 50],
+        data: [sentiment > 0 ? 100 - sentiment : 100 + sentiment, sentiment],
         // backgroundColor: ["#808080", "#808080", "#808080", "#808080"],
-        backgroundColor: ["#808080", props.item.circleColour],
+        backgroundColor: [
+          "#808080",
+          status === "Bullish"
+            ? "#00DE4C"
+            : status === "Bearish"
+            ? "#DE0000"
+            : "#FFE70F",
+        ],
         borderWidth: 0,
       },
     ],
@@ -72,8 +86,15 @@ export default function CircleChart(props) {
             alignItems: "center",
           }}
         >
-          <Typography sx={{ fontSize: "0.7rem" }}>TSLA</Typography>
-          <Typography sx={{ fontSize: "0.7rem" }}>$256.15(2.62%)</Typography>
+          <Typography sx={{ fontSize: "0.7rem" }}>
+            {props.item.Symbol}
+          </Typography>
+          <Typography sx={{ fontSize: "0.7rem" }}>
+            ${props.item?.price}
+            <span
+              style={{ color: percentChange < 0 ? "#BD141D" : "#00D54A" }}
+            >{`(${percentChange})`}</span>
+          </Typography>
         </Box>
         <div
           className="doughnut-chart "
@@ -104,7 +125,12 @@ export default function CircleChart(props) {
               borderRadius: "50%",
 
               zIndex: -1,
-              backgroundColor: props.item.bgColor,
+              backgroundColor:
+                status === "Bullish"
+                  ? "#014A19"
+                  : status === "Bearish"
+                  ? "#4B0101"
+                  : "#C2AF00",
             }}
           >
             <Box
@@ -124,11 +150,16 @@ export default function CircleChart(props) {
                   margin: 0,
                   height: "0.1rem",
                   border: 0,
-                  backgroundColor: props.item.circleColour,
+                  backgroundColor:
+                    status === "Bullish"
+                      ? "#00DE4C"
+                      : status === "Bearish"
+                      ? "#DE0000"
+                      : "#FFE70F",
                 }}
               />
 
-              <Typography variant="h6">26</Typography>
+              <Typography sx={{ fontSize: "1.1rem" }}>{sentiment}</Typography>
             </Box>
           </Box>
         </div>

@@ -12,6 +12,7 @@ import {
   Button,
   Divider,
 } from "@mui/material";
+// ff170cfbc214454f0a10844eb6e9606e
 
 import "./Styles/index.css";
 import HeatMap from "./components/HeatMap";
@@ -28,17 +29,74 @@ import MiniCardsBearish from "./components/MiniCardsBearish";
 import { useSelector, useDispatch } from "react-redux";
 import { useCoinActions } from "../../../_actions";
 import { getSentiment } from "./dailySentimentSlice";
+
 const DailySentiment = () => {
-  const sentimentData = useSelector((state) => state.sentiment.value);
+  const sentimentSliceData = useSelector((state) => state.sentiment.value);
+  const sentimentData = sentimentSliceData.topSentiment;
+  const searchData = sentimentSliceData.searchStockData;
+  const dailyComuData = sentimentSliceData.searchGraphData;
+  const dailyHotListData = sentimentSliceData.hotListData;
+  const fixedTableData = sentimentSliceData.fixedListData;
+
+  // const [price, setPrice] = useState(0);
+
+  // const login = {
+  //   event: "login",
+  //   data: {
+  //     apiKey: "ff170cfbc214454f0a10844eb6e9606e",
+  //   },
+  // };
+
+  // const subscribe = {
+  //   event: "subscribe",
+  //   data: {
+  //     ticker: "msft",
+  //   },
+  // };
+
+  // useEffect(() => {
+  //   const ws = new WebSocket(
+  //     "wss://websockets.financialmodelingprep.com",
+  //     null,
+  //     null,
+  //     null,
+  //     { rejectUnauthorized: false }
+  //   );
+  //   ws.onopen = () => {
+  //     ws.send(JSON.stringify(login));
+  //     ws.send(JSON.stringify(subscribe));
+  //   };
+  //   ws.onmessage = (event) => {
+  //     const response = JSON.parse(event.data);
+  //     console.log(response, 11111111);
+  //     setPrice(response.ap);
+  //   };
+  // }, []);
+
   const coinActions = useCoinActions();
   const dispatch = useDispatch();
-  const [] = useState({});
-
-  console.log(sentimentData, "111111");
+  const [intervalCount, setIntervalCount] = useState(0);
 
   useEffect(() => {
     coinActions.predictionListing();
+    coinActions.searchSymbol();
+    coinActions.sentimentGraph();
+    coinActions.dailyHotList();
+    coinActions.stockPrice();
+    coinActions.sp500Sentiment();
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIntervalCount(intervalCount + 1);
+      coinActions.predictionListing();
+      coinActions.searchSymbol();
+      coinActions.sentimentGraph();
+      coinActions.dailyHotList();
+      coinActions.stockPrice();
+    }, 200000);
+    return () => clearInterval(interval);
+  }, [intervalCount]);
 
   return (
     <>
@@ -62,7 +120,7 @@ const DailySentiment = () => {
                 height: "28vh",
               }}
             >
-              <SearchCard />
+              <SearchCard searchData={searchData} />
             </Paper>
           </Grid>
 
@@ -153,7 +211,7 @@ const DailySentiment = () => {
                 md={4}
                 sx={{ display: "flex", alignItems: "center", gap: 1 }}
               >
-                <SentimentCard />
+                <SentimentCard sentimentData={sentimentData} />
               </Grid>
             </Box>
           </Grid>
@@ -167,7 +225,7 @@ const DailySentiment = () => {
             <Paper className="paper-back" sx={{ p: 1, height: "28vh" }}>
               <Typography>Top Mentions Stock - Wallstreet Bet</Typography>
 
-              <TopTable />
+              <TopTable dailyHotListData={dailyHotListData} />
             </Paper>
           </Grid>
           {/* second item */}

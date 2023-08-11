@@ -9,13 +9,31 @@ import { Doughnut } from "react-chartjs-2";
 import { NoEncryption } from "@mui/icons-material";
 
 export default function TopCircleChart(props) {
+  const sentiment =
+    props.topSearchData?.sentiment_history?.sentiment_today?.replace("%", "");
+  const status =
+    parseFloat(sentiment) > 0
+      ? "Bullish"
+      : parseFloat(sentiment) < 0
+      ? "Bearish"
+      : "Neutral";
   const donutChart = {
-    labels: ["1 star", "2 star"],
+    labels: ["grey", "sentiment"],
     datasets: [
       {
-        data: [10, 50],
+        data: [
+          sentiment > 0 ? 100 - sentiment : 100 + sentiment - sentiment,
+          sentiment,
+        ],
         // backgroundColor: ["#808080", "#808080", "#808080", "#808080"],
-        backgroundColor: [props.item.circleColour, "#808080"],
+        backgroundColor: [
+          "#808080",
+          status === "Bullish"
+            ? "#00DE4C"
+            : status === "Bearish"
+            ? "#DE0000"
+            : "#FFE70F",
+        ],
         borderWidth: 0,
       },
     ],
@@ -55,7 +73,6 @@ export default function TopCircleChart(props) {
       <Box
         sx={{
           position: "absolute",
-
           height: "115px",
           width: "115px",
           top: "0%",
@@ -63,7 +80,12 @@ export default function TopCircleChart(props) {
           borderRadius: "50%",
 
           zIndex: -1,
-          backgroundColor: props.item.bgColor,
+          backgroundColor:
+            status === "Bullish"
+              ? "#014A19"
+              : status === "Bearish"
+              ? "#4B0101"
+              : "#C2AF00",
         }}
       >
         <Box
@@ -83,12 +105,17 @@ export default function TopCircleChart(props) {
               margin: 0,
               height: "0.1rem",
               border: 0,
-              backgroundColor: "#E21111",
+              backgroundColor:
+                status === "Bullish"
+                  ? "#00DE4C"
+                  : status === "Bearish"
+                  ? "#DE0000"
+                  : "#FFE70F",
             }}
           />
 
-          <Typography variant="h5">26</Typography>
-          <Typography sx={{ fontSize: "0.7rem" }}>Bearish</Typography>
+          <Typography variant="h6">{sentiment}</Typography>
+          <Typography sx={{ fontSize: "0.7rem" }}>{status}</Typography>
         </Box>
       </Box>
     </div>

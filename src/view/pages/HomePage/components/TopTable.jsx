@@ -1,20 +1,9 @@
 import { Box, Avatar, Button } from "@mui/material";
 import * as React from "react";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-const rows = [
-  createData("AAPL", 159, 6.0, 24, 4.0),
-  createData("AAPL", 237, 9.0, 37, 4.3),
-  createData("AAPL", 262, 16.0, 24, 6.0),
-  createData("AAPL", 305, 3.7, 67, 4.3),
-  createData("AAPL", 305, 3.7, 67, 4.3),
-  createData("AAPL", 305, 3.7, 67, 4.3),
-  createData("AAPL", 305, 3.7, 67, 4.3),
-];
+export default function TopTable(props) {
+  const hotListTable = props.dailyHotListData;
 
-export default function TopTable() {
   return (
     <Box className="top-table" sx={{ height: "90%" }}>
       <table style={{ height: "100%", width: "100%" }}>
@@ -28,7 +17,10 @@ export default function TopTable() {
           </tr>
         </thead>
         <tbody>
-          {rows.map((item) => {
+          {hotListTable.map((item, index) => {
+            let sentiment = parseFloat(item?.sentiment?.replace("%", ""));
+            let status =
+              sentiment > 0 ? "Bullish" : sentiment < 0 ? "Bearish" : "Neutral";
             return (
               <tr>
                 <td>
@@ -41,31 +33,36 @@ export default function TopTable() {
                   >
                     <Box sx={{ py: 0.2 }}>
                       <Avatar
-                        alt="Remy Sharp"
+                        alt={item.Symbol}
                         src="/static/images/avatar/1.jpg"
                         sx={{ width: 30, height: 30 }}
                       />
                     </Box>
-                    {item.name}
+                    {item.Symbol}
                   </Box>
                 </td>
                 <td>
-                  192.98{" "}
+                  {item.price}{" "}
                   <span style={{ color: "#EE0303", fontSize: "0.7rem" }}>
-                    (1.09%)
+                    {`(${item.price_change_percentage})`}
                   </span>
                 </td>
-                <td>150</td>
+                <td>{sentiment}</td>
                 <td>
                   <Button
+                    className="table-sentiment-button"
                     variant="contained"
-                    sx={{ backgroundColor: "#EE0303", px: 1, py: 0 }}
+                    sx={{
+                      backgroundColor: sentiment < 0 ? "#EE0303" : "#4EDD70",
+                      width: " 60%",
+                      py: 0,
+                    }}
                     size="small"
                   >
-                    Bearish
+                    {status}
                   </Button>
                 </td>
-                <td>1</td>
+                <td>{index + 1}</td>
               </tr>
             );
           })}

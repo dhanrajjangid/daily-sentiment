@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { styled, Typography } from "@mui/material";
+import { styled, Typography, Avatar } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
 
@@ -109,17 +109,27 @@ export default function FixedSpacing(props) {
                         alignItems: "center",
                       }}
                     >
-                      <img
-                        style={{ height: "15px", width: "15px" }}
-                        // src={}
-                        alt="L"
+                      <Avatar
+                        alt={item.Symbol}
+                        src="/static/images/avatar/1.jpg"
+                        sx={{
+                          width: 30,
+                          height: 30,
+                          backgroundColor: "yellow",
+                          color: "black",
+                        }}
                       />
+                      {/* <img
+                        style={{ height: "15px", width: "15px" }}
+                        src="/static/images/avatar/1.jpg"
+                        alt={item.Symbol}
+                      /> */}
                     </Box>
                     <Typography sx={{ fontSize: "0.8rem" }}>
                       {item.Symbol}
                     </Typography>
                     <Typography sx={{ fontSize: "0.8rem" }}>
-                      {item.sentiment_today}
+                      {item.sentiment_today?.replace("%", "")}
                     </Typography>
                   </Box>
                 </Item>
